@@ -1,4 +1,5 @@
 package com.willis_chico.vocabulary_trainer;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -22,15 +23,15 @@ public class FileEditor {
         values = new ArrayList<>();
     }
 
-    public void scan(){
+    public void scan() {
         String line;
-        String [] strings;
-        while(scanner.hasNextLine()){
+        String[] strings;
+        while (scanner.hasNextLine()) {
             line = scanner.nextLine();
             strings = line.split(splitBy);
             for (int i = 0; i < strings.length; i++) {
-                strings[i].replace("\"", "");
-                strings[i].trim();
+                strings[i] = strings[i].replace("\"", "");
+                strings[i] = strings[i].trim();
             }
             values.add(strings);
         }
