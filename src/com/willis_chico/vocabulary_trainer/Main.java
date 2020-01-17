@@ -7,6 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         FileEditor editor = new FileEditor();
+        editor.scan();
         List<String[]> values = editor.getValues();
         for (String[] value : values) {
             System.out.println(Arrays.toString(value));
