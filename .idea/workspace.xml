@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0207af1-eaa2-4e87-b669-9865717dc679" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,14 +152,7 @@
       <option name="project" value="LOCAL" />
       <updated>1579304235127</updated>
     </task>
-    <task id="LOCAL-00010" summary="Add .gitignore">
-      <created>1579304607732</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1579304607732</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -193,8 +186,7 @@
     <MESSAGE value="Add CSV file and connect to CSVReader" />
     <MESSAGE value="Add CSVReader2" />
     <MESSAGE value="Finish CSVReader and vocable.csv" />
-    <MESSAGE value="Add .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish CSVReader and vocable.csv" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#TODO" timestamp="1579289641207">
@@ -205,14 +197,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="485" y="117" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1536.824@0.0.1536.824" timestamp="1579303313702" />
-    <state x="499" y="0" key="CommitChangelistDialog2" timestamp="1579304877150">
+    <state x="499" y="0" key="CommitChangelistDialog2" timestamp="1579304234475">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579304877150" />
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1579304853219">
+    <state x="499" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579304234475" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1579302830254">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1579304853219" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1579302830254" />
     <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1579303514327">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -253,14 +245,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1579304481215" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1579304939008">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1579304237306">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1579304939008" />
-    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579304930943">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1579304237306" />
+    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579304592386">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1579304930943" />
+    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1579304592386" />
     <state x="538" y="249" key="git4idea.ui.GitTagDialog" timestamp="1579303237783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
