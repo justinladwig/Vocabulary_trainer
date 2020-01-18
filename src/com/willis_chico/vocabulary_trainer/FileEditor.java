@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileEditor {
-    private final String path = "res/vocable.csv";
+    private String path;
     private File file;
     private Scanner scanner;
     private List<String[]> values;
     private final String seperator = ",";
     private PrintWriter writer;
 
-    public FileEditor() {
+    public FileEditor(String path) {
         file = new File(path);
         values = new List<>();
     }
