@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0207af1-eaa2-4e87-b669-9865717dc679" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/vocableCopy.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/willis_chico/vocabulary_trainer/Collection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Vocabulary_trainer/META-INF/Vocabulary_trainer.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Vocabulary_trainer/com/willis_chico/vocabulary_trainer/FileEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Vocabulary_trainer/com/willis_chico/vocabulary_trainer/FileEditor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Vocabulary_trainer/com/willis_chico/vocabulary_trainer/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Vocabulary_trainer/com/willis_chico/vocabulary_trainer/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/vocable.csv" beforeDir="false" afterPath="$PROJECT_DIR$/res/vocable.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/willis_chico/vocabulary_trainer/FileEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/willis_chico/vocabulary_trainer/FileEditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/willis_chico/vocabulary_trainer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/willis_chico/vocabulary_trainer/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579304235127</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Finish FileEditor">
+      <created>1579344612561</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1579344612561</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -200,7 +201,8 @@
     <MESSAGE value="Add CSV file and connect to CSVReader" />
     <MESSAGE value="Add CSVReader2" />
     <MESSAGE value="Finish CSVReader and vocable.csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish CSVReader and vocable.csv" />
+    <MESSAGE value="Finish FileEditor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish FileEditor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#TODO" timestamp="1579289641207">
@@ -211,13 +213,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="485" y="117" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1536.824@0.0.1536.824" timestamp="1579303313702" />
-    <state x="556" y="177" key="#com.intellij.ide.util.MemberChooser" timestamp="1579340867322">
+    <state x="556" y="177" key="#com.intellij.ide.util.MemberChooser" timestamp="1579344895086">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="556" y="177" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1579340867322" />
-    <state x="499" y="0" key="CommitChangelistDialog2" timestamp="1579304234475">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="556" y="177" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1579344895086" />
+    <state x="487" y="0" key="CommitChangelistDialog2" timestamp="1579344611427">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
+    <state x="487" y="0" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1579344611427" />
     <state x="499" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579304234475" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1579302830254">
       <screen x="0" y="0" width="1536" height="824" />
@@ -235,25 +238,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="626" y="306" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1579289705336" />
-    <state width="1458" height="235" key="GridCell.Tab.0.bottom" timestamp="1579344046366">
+    <state width="1458" height="235" key="GridCell.Tab.0.bottom" timestamp="1579373488880">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="235" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1579344046366" />
+    <state width="1458" height="235" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1579373488880" />
     <state width="1493" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579304325867" />
-    <state width="1458" height="235" key="GridCell.Tab.0.center" timestamp="1579344046366">
+    <state width="1458" height="235" key="GridCell.Tab.0.center" timestamp="1579373488880">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="235" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1579344046366" />
+    <state width="1458" height="235" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1579373488880" />
     <state width="1493" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579304325865" />
-    <state width="1458" height="235" key="GridCell.Tab.0.left" timestamp="1579344046366">
+    <state width="1458" height="235" key="GridCell.Tab.0.left" timestamp="1579373488880">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="235" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1579344046366" />
+    <state width="1458" height="235" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1579373488880" />
     <state width="1493" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579304325865" />
-    <state width="1458" height="235" key="GridCell.Tab.0.right" timestamp="1579344046366">
+    <state width="1458" height="235" key="GridCell.Tab.0.right" timestamp="1579373488880">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="235" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1579344046366" />
+    <state width="1458" height="235" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1579373488880" />
     <state width="1493" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579304325866" />
     <state width="1458" height="294" key="GridCell.Tab.1.bottom" timestamp="1579341349070">
       <screen x="0" y="0" width="1500" height="960" />
@@ -296,9 +299,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="431" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1500.960@0.0.1500.960" timestamp="1579343250800" />
-    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579304592386">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="563" y="377" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579373535147">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
+    <state x="563" y="377" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.960@0.0.1500.960" timestamp="1579373535147" />
     <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1579304592386" />
     <state x="538" y="249" key="git4idea.ui.GitTagDialog" timestamp="1579303237783">
       <screen x="0" y="0" width="1536" height="824" />
