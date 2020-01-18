@@ -6,7 +6,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        FileEditor editor = new FileEditor();
+        FileEditor editor = new FileEditor("res/vocable.csv");
         editor.scan();
         List<String[]> values = editor.getValues();
         for (String[] value : values) {

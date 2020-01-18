@@ -6,14 +6,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FileEditor {
-    private final String path = "res/vocable.csv";
     private File file;
     private Scanner scanner;
     private List<String[]> values;
-    private final String seperator = ",";
+    private final String separator = ",";
     private PrintWriter writer;
 
-    public FileEditor() {
+    public FileEditor(String path) {
         file = new File(path);
         values = new ArrayList<>();
     }
@@ -29,7 +28,7 @@ public class FileEditor {
         String[] strings;
         while (scanner.hasNextLine()) {
             line = scanner.nextLine();
-            strings = line.split(seperator);
+            strings = line.split(separator);
             for (int i = 0; i < strings.length; i++) {
                 strings[i] = strings[i].replace("\"", "");
                 strings[i] = strings[i].trim();
@@ -43,15 +42,13 @@ public class FileEditor {
     public void write() {
         try {
             writer = new PrintWriter(new FileWriter(file));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
         for (int i = 0; i < values.size(); i++) {
             for (int j = 0; j < values.get(i).length; j++) {
                 if (j < values.get(i).length - 1)
-                    writer.print(values.get(i)[j] + seperator);
+                    writer.print(values.get(i)[j] + separator);
                 else
                     writer.println(values.get(i)[j]);
             }
