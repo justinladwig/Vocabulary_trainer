@@ -12,5 +12,9 @@ public class Main {
         for (String[] value : values) {
             System.out.println(Arrays.toString(value));
         }
+        String []vok = {"Justin", "Ladwig", "3", "2", "1"};
+        values.add(vok);
+        editor.setValues(values);
+        editor.write();
     }
 }
