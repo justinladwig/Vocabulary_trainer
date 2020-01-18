@@ -9,7 +9,7 @@ public class Collection {
 
     public Collection() {
         vocabulary = new ArrayList<>();
-        editor = new FileEditor();
+        editor = new FileEditor("res/vocable.csv");
     }
 
     public void importVocabulary(){
