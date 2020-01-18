@@ -63,4 +63,15 @@ public class Collection {
     public void addVocabel(Vocabel vocabel){
         vocabulary.append(vocabel);
     }
+    public void deleteVocabel(String word){
+        vocabulary.toFirst();
+        while (vocabulary.hasAccess()){
+            if(vocabulary.getContent().getWord().equals(word)){
+                vocabulary.remove();
+            }
+            else {
+                vocabulary.next();
+            }
+        }
+    }
 }
