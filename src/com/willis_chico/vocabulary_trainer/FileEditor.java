@@ -46,11 +46,11 @@ public class FileEditor {
             e.printStackTrace();
         }
         for (String[] value : values) {
-            for (int j = 0; j < value.length; j++) {
-                if (j < value.length - 1)
-                    writer.print(value[j] + separator);
+            for (int i = 0; i < value.length; i++) {
+                if (i < value.length - 1)
+                    writer.print(value[i] + separator);
                 else
-                    writer.println(value[j]);
+                    writer.println(value[i]);
             }
         }
         writer.close();
