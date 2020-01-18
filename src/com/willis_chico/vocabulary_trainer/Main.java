@@ -7,10 +7,10 @@ public class Main {
         collection.importVocabulary();
         collection.printVocabulary();
         System.out.println();
-        collection.addVocable(new Vocabel("Mischa", "Buch", Difficulty.NORMAL, 1, 0));
+        collection.addVocabel(new Vocabel("Mischa", "Buch", Difficulty.NORMAL, 1, 0));
         collection.printVocabulary();
         System.out.println();
-        collection.deleteVocable("Mischa");
+        collection.deleteVocabel("Mischa");
         collection.printVocabulary();
         System.out.println();
         collection.exportVocabulary();
