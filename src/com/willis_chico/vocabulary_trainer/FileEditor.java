@@ -2,7 +2,6 @@ package com.willis_chico.vocabulary_trainer;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class FileEditor {
@@ -15,7 +14,7 @@ public class FileEditor {
 
     public FileEditor() {
         file = new File(path);
-        values = new ArrayList<>();
+        values = new List<>();
     }
 
     // Liest die vocable.csv Datei und speichert die Werte
@@ -34,7 +33,7 @@ public class FileEditor {
                 strings[i] = strings[i].replace("\"", "");
                 strings[i] = strings[i].trim();
             }
-            values.add(strings);
+            values.append(strings);
         }
         scanner.close();
     }
@@ -43,27 +42,26 @@ public class FileEditor {
     public void write() {
         try {
             writer = new PrintWriter(new FileWriter(file));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for (int i = 0; i < values.size(); i++) {
-            for (int j = 0; j < values.get(i).length; j++) {
-                if (j < values.get(i).length - 1)
-                    writer.print(values.get(i)[j] + seperator);
+        values.toFirst();
+        while(values.hasAccess()) {
+            for (int j = 0; j < values.getContent().length; j++) {
+                if (j < values.getContent().length - 1)
+                    writer.print(values.getContent()[j] + seperator);
                 else
-                    writer.println(values.get(i)[j]);
+                    writer.println(values.getContent()[j]);
             }
+            values.next();
         }
         writer.close();
     }
 
     // get- und set-Methode
-    public List<String[]> getValues() {
+    public List getValues() {
         return values;
     }
-
     public void setValues(List<String[]> values) {
         this.values = values;
     }

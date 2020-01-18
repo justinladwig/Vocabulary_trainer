@@ -6,15 +6,9 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        FileEditor editor = new FileEditor();
-        editor.scan();
-        List<String[]> values = editor.getValues();
-        for (String[] value : values) {
-            System.out.println(Arrays.toString(value));
-        }
-        String []vok = {"Justin", "Ladwig", "3", "2", "1"};
-        values.add(vok);
-        editor.setValues(values);
-        editor.write();
+        Collection collection = new Collection();
+        collection.importVocabulary();
+        collection.printVocabulary();
+        collection.exportVocabulary();
     }
 }
