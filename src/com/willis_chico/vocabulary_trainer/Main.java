@@ -1,8 +1,5 @@
 package com.willis_chico.vocabulary_trainer;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -10,10 +7,10 @@ public class Main {
         collection.importVocabulary();
         collection.printVocabulary();
         System.out.println();
-        collection.addVocabel(new Vocabel("Mischa", "Buch", Difficulty.NORMAL, 1, 0));
+        collection.addVocable(new Vocabel("Mischa", "Buch", Difficulty.NORMAL, 1, 0));
         collection.printVocabulary();
         System.out.println();
-        collection.deleteVocabel("Mischa");
+        collection.deleteVocable("Mischa");
         collection.printVocabulary();
         System.out.println();
         collection.exportVocabulary();

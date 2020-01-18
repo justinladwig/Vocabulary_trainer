@@ -1,26 +1,23 @@
 package com.willis_chico.vocabulary_trainer;
 
 public class Collection {
-    private com.willis_chico.vocabulary_trainer.List<Vocabel> vocabulary;
+    private List<Vocabel> vocabulary;
     private FileEditor editor;
 
     public Collection() {
-        vocabulary = new com.willis_chico.vocabulary_trainer.List<>();
-        editor = new FileEditor();
+        vocabulary = new List<>();
+        editor = new FileEditor("res/vocable.csv");
     }
 
     public void importVocabulary(){
         editor.scan();
-        com.willis_chico.vocabulary_trainer.List<String[]> values = editor.getValues();
+        List<String[]> values = editor.getValues();
         Difficulty difficulty;
         values.toFirst();
         while(values.hasAccess()) {
             switch (Integer.parseInt(values.getContent()[2])){
                 case 1:
                     difficulty = Difficulty.EASY;
-                    break;
-                case 2:
-                    difficulty = Difficulty.NORMAL;
                     break;
                 case 3:
                     difficulty = Difficulty.HARD;
@@ -33,7 +30,7 @@ public class Collection {
         }
     }
     public void exportVocabulary(){
-        com.willis_chico.vocabulary_trainer.List<String[]> values = new List<>();
+        List<String[]> values = new List<>();
         vocabulary.toFirst();
         while(vocabulary.hasAccess()) {
             String[] voc = new String[5];
@@ -60,10 +57,10 @@ public class Collection {
             vocabulary.next();
         }
     }
-    public void addVocabel(Vocabel vocabel){
+    public void addVocable(Vocabel vocabel){
         vocabulary.append(vocabel);
     }
-    public void deleteVocabel(String word){
+    public void deleteVocable(String word){
         vocabulary.toFirst();
         while (vocabulary.hasAccess()){
             if(vocabulary.getContent().getWord().equals(word)){
