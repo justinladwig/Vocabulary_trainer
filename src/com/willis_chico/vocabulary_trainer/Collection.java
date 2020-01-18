@@ -1,14 +1,14 @@
 package com.willis_chico.vocabulary_trainer;
 
 public class Collection {
-    private com.willis_chico.vocabulary_trainer.List<Vocabel> vocabulary;
+    private List<Vocabel> vocabulary;
     private FileEditor editor;
 
     public Collection() {
-        vocabulary = new com.willis_chico.vocabulary_trainer.List<>();
+        vocabulary = new List<>();
         editor = new FileEditor();
     }
-
+// Vokabeln aus Datei in Liste speichern
     public void importVocabulary(){
         editor.scan();
         com.willis_chico.vocabulary_trainer.List<String[]> values = editor.getValues();
@@ -32,6 +32,7 @@ public class Collection {
             values.next();
         }
     }
+    // Vokabeln aus Liste in Datei speichern
     public void exportVocabulary(){
         com.willis_chico.vocabulary_trainer.List<String[]> values = new List<>();
         vocabulary.toFirst();
@@ -60,9 +61,11 @@ public class Collection {
             vocabulary.next();
         }
     }
+    // Vokabel hinzufügen
     public void addVocabel(Vocabel vocabel){
         vocabulary.append(vocabel);
     }
+    //Vokabel löschen
     public void deleteVocabel(String word){
         vocabulary.toFirst();
         while (vocabulary.hasAccess()){
@@ -73,5 +76,27 @@ public class Collection {
                 vocabulary.next();
             }
         }
+    }
+
+    // TODO: 18.01.2020 diese beiden Methode überprüfen 
+    //Vokabel suchen
+    public Vocabel searchVocabel(String word){
+            vocabulary.toFirst();
+            while (vocabulary.hasAccess()){
+                if(vocabulary.getContent().getWord().equals(word)){
+                    return vocabulary.getContent();
+                }
+            }
+            return null;
+    }
+    // Prüft, ob diese vokabel existiert
+    public boolean existVocabel(String word){
+        vocabulary.toFirst();
+        while (vocabulary.hasAccess()){
+            if(vocabulary.getContent().getWord().equals(word)){
+                return true;
+            }
+        }
+        return false;
     }
 }
