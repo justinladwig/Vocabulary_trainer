@@ -1,7 +1,7 @@
 package com.willis_chico.vocabulary_trainer;
 
 public class Collection {
-    private List<Vocabel> vocabulary;
+    private List<Vocable> vocabulary;
     private FileEditor editor;
 
     public Collection() {
@@ -15,21 +15,20 @@ public class Collection {
         List<String[]> values = editor.getValues();
         Difficulty difficulty;
         values.toFirst();
+        // TODO: 19.01.2020 Auf fehlerhafte CSV überprüfen
         while (values.hasAccess()) {
             switch (Integer.parseInt(values.getContent()[2])) {
                 case 1:
                     difficulty = Difficulty.EASY;
                     break;
-                case 2:
-                    difficulty = Difficulty.NORMAL;
-                    break;
                 case 3:
                     difficulty = Difficulty.HARD;
                     break;
+                case 2:
                 default:
                     difficulty = Difficulty.NORMAL;
             }
-            vocabulary.append(new Vocabel(values.getContent()[0], values.getContent()[1], difficulty, Integer.parseInt(values.getContent()[3]), Integer.parseInt(values.getContent()[4])));
+            vocabulary.append(new Vocable(values.getContent()[0], values.getContent()[1], difficulty, Integer.parseInt(values.getContent()[3]), Integer.parseInt(values.getContent()[4])));
             values.next();
         }
     }
@@ -66,8 +65,8 @@ public class Collection {
     }
 
     // Vokabel hinzufügen
-    public void addVocable(Vocabel vocabel) {
-        vocabulary.append(vocabel);
+    public void addVocable(Vocable vocable) {
+        vocabulary.append(vocable);
     }
 
     //Vokabel löschen
@@ -84,7 +83,7 @@ public class Collection {
 
     // TODO: 18.01.2020 diese beiden Methode überprüfen 
     //Vokabel suchen
-    public Vocabel searchVocable(String word) {
+    public Vocable searchVocable(String word) {
         vocabulary.toFirst();
         while (vocabulary.hasAccess()) {
             if (vocabulary.getContent().getWord().equals(word)) {

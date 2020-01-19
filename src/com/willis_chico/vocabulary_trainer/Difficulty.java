@@ -5,10 +5,14 @@ public enum Difficulty {
     NORMAL(2),
     HARD(3);
 
-        private final int value;
-        Difficulty(final int newValue) {
-            value = newValue;
-        }
-        public int getValue() { return value; }
+    private final int value;
+
+    Difficulty(final int newValue) {
+        value = newValue;
     }
+
+    public int getValue() {
+        return value;
+    }
+}
 

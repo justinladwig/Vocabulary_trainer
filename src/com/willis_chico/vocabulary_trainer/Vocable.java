@@ -1,13 +1,13 @@
 package com.willis_chico.vocabulary_trainer;
 
-public class Vocabel {
+public class Vocable {
     private String word;
     private String translation;
     private Difficulty difficulty;
     private int numberWrong;
     private int numberRight;
 
-    public Vocabel(String word, String translation, Difficulty difficulty, int numberWrong, int numberRight) {
+    public Vocable(String word, String translation, Difficulty difficulty, int numberWrong, int numberRight) {
         this.word = word;
         this.translation = translation;
         this.difficulty = difficulty;
