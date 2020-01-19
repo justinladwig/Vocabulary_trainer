@@ -22,8 +22,11 @@ public class GUI {
             JFrame frame = new JFrame("Vocable Trainer");
             frame.setContentPane(new GUI().panel1);
             frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            frame.setUndecorated(true);
             frame.pack();
             frame.setVisible(true);
+
         }
    }
 }
