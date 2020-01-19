@@ -17,18 +17,23 @@ public class Collection {
         values.toFirst();
         // TODO: 19.01.2020 Auf fehlerhafte CSV überprüfen
         while (values.hasAccess()) {
-            switch (Integer.parseInt(values.getContent()[2])) {
-                case 1:
-                    difficulty = Difficulty.EASY;
-                    break;
-                case 3:
-                    difficulty = Difficulty.HARD;
-                    break;
-                case 2:
-                default:
-                    difficulty = Difficulty.NORMAL;
+            try {
+                switch (Integer.parseInt(values.getContent()[2])) {
+                    case 1:
+                        difficulty = Difficulty.EASY;
+                        break;
+                    case 3:
+                        difficulty = Difficulty.HARD;
+                        break;
+                    case 2:
+                    default:
+                        difficulty = Difficulty.NORMAL;
+                }
+                vocabulary.append(new Vocable(values.getContent()[0], values.getContent()[1], difficulty, Integer.parseInt(values.getContent()[3]), Integer.parseInt(values.getContent()[4])));
             }
-            vocabulary.append(new Vocable(values.getContent()[0], values.getContent()[1], difficulty, Integer.parseInt(values.getContent()[3]), Integer.parseInt(values.getContent()[4])));
+            catch(NumberFormatException e){
+                e.printStackTrace();
+            }
             values.next();
         }
     }
