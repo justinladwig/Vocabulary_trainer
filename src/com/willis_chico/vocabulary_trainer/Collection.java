@@ -6,16 +6,17 @@ public class Collection {
 
     public Collection() {
         vocabulary = new List<>();
-        editor = new FileEditor();
+        editor = new FileEditor("res/vocable.csv");
     }
-// Vokabeln aus Datei in Liste speichern
-    public void importVocabulary(){
+
+    // Vokabeln aus Datei in Liste speichern
+    public void importVocabulary() {
         editor.scan();
-        com.willis_chico.vocabulary_trainer.List<String[]> values = editor.getValues();
+        List<String[]> values = editor.getValues();
         Difficulty difficulty;
         values.toFirst();
-        while(values.hasAccess()) {
-            switch (Integer.parseInt(values.getContent()[2])){
+        while (values.hasAccess()) {
+            switch (Integer.parseInt(values.getContent()[2])) {
                 case 1:
                     difficulty = Difficulty.EASY;
                     break;
@@ -28,15 +29,16 @@ public class Collection {
                 default:
                     difficulty = Difficulty.NORMAL;
             }
-            vocabulary.append(new Vocabel(values.getContent()[0], values.getContent()[1],difficulty, Integer.parseInt(values.getContent()[3]), Integer.parseInt(values.getContent()[4])));
+            vocabulary.append(new Vocabel(values.getContent()[0], values.getContent()[1], difficulty, Integer.parseInt(values.getContent()[3]), Integer.parseInt(values.getContent()[4])));
             values.next();
         }
     }
+
     // Vokabeln aus Liste in Datei speichern
-    public void exportVocabulary(){
-        com.willis_chico.vocabulary_trainer.List<String[]> values = new List<>();
+    public void exportVocabulary() {
+        List<String[]> values = new List<>();
         vocabulary.toFirst();
-        while(vocabulary.hasAccess()) {
+        while (vocabulary.hasAccess()) {
             String[] voc = new String[5];
             voc[0] = vocabulary.getContent().getWord();
             voc[1] = vocabulary.getContent().getTranslation();
@@ -49,9 +51,10 @@ public class Collection {
         editor.setValues(values);
         editor.write();
     }
-    public void printVocabulary(){
+
+    public void printVocabulary() {
         vocabulary.toFirst();
-        while(vocabulary.hasAccess()){
+        while (vocabulary.hasAccess()) {
             System.out.print(vocabulary.getContent().getWord() + " ");
             System.out.print(vocabulary.getContent().getTranslation() + " ");
             System.out.print(vocabulary.getContent().getDifficulty() + " ");
@@ -61,18 +64,19 @@ public class Collection {
             vocabulary.next();
         }
     }
+
     // Vokabel hinzufügen
-    public void addVocabel(Vocabel vocabel){
+    public void addVocable(Vocabel vocabel) {
         vocabulary.append(vocabel);
     }
+
     //Vokabel löschen
-    public void deleteVocabel(String word){
+    public void deleteVocable(String word) {
         vocabulary.toFirst();
-        while (vocabulary.hasAccess()){
-            if(vocabulary.getContent().getWord().equals(word)){
+        while (vocabulary.hasAccess()) {
+            if (vocabulary.getContent().getWord().equals(word)) {
                 vocabulary.remove();
-            }
-            else {
+            } else {
                 vocabulary.next();
             }
         }
@@ -80,20 +84,21 @@ public class Collection {
 
     // TODO: 18.01.2020 diese beiden Methode überprüfen 
     //Vokabel suchen
-    public Vocabel searchVocabel(String word){
-            vocabulary.toFirst();
-            while (vocabulary.hasAccess()){
-                if(vocabulary.getContent().getWord().equals(word)){
-                    return vocabulary.getContent();
-                }
-            }
-            return null;
-    }
-    // Prüft, ob diese vokabel existiert
-    public boolean existVocabel(String word){
+    public Vocabel searchVocable(String word) {
         vocabulary.toFirst();
-        while (vocabulary.hasAccess()){
-            if(vocabulary.getContent().getWord().equals(word)){
+        while (vocabulary.hasAccess()) {
+            if (vocabulary.getContent().getWord().equals(word)) {
+                return vocabulary.getContent();
+            }
+        }
+        return null;
+    }
+
+    // Prüft, ob diese vokabel existiert
+    public boolean existVocable(String word) {
+        vocabulary.toFirst();
+        while (vocabulary.hasAccess()) {
+            if (vocabulary.getContent().getWord().equals(word)) {
                 return true;
             }
         }

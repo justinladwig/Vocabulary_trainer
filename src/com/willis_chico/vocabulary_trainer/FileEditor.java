@@ -1,18 +1,16 @@
 package com.willis_chico.vocabulary_trainer;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileEditor {
-    private final String path = "res/vocable.csv";
     private File file;
     private Scanner scanner;
     private List<String[]> values;
-    private final String seperator = ",";
+    private final String separator = ",";
     private PrintWriter writer;
 
-    public FileEditor() {
+    public FileEditor(String path) {
         file = new File(path);
         values = new List<>();
     }
@@ -28,7 +26,7 @@ public class FileEditor {
         String[] strings;
         while (scanner.hasNextLine()) {
             line = scanner.nextLine();
-            strings = line.split(seperator);
+            strings = line.split(separator);
             for (int i = 0; i < strings.length; i++) {
                 strings[i] = strings[i].replace("\"", "");
                 strings[i] = strings[i].trim();
@@ -46,10 +44,10 @@ public class FileEditor {
             e.printStackTrace();
         }
         values.toFirst();
-        while(values.hasAccess()) {
+        while (values.hasAccess()) {
             for (int j = 0; j < values.getContent().length; j++) {
                 if (j < values.getContent().length - 1)
-                    writer.print(values.getContent()[j] + seperator);
+                    writer.print(values.getContent()[j] + separator);
                 else
                     writer.println(values.getContent()[j]);
             }
@@ -62,6 +60,7 @@ public class FileEditor {
     public List getValues() {
         return values;
     }
+
     public void setValues(List<String[]> values) {
         this.values = values;
     }
