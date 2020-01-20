@@ -30,8 +30,7 @@ public class Collection {
                         difficulty = Difficulty.NORMAL;
                 }
                 vocabulary.append(new Vocable(values.getContent()[0], values.getContent()[1], difficulty, Integer.parseInt(values.getContent()[3]), Integer.parseInt(values.getContent()[4])));
-            }
-            catch(NumberFormatException e){
+            } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
             values.next();
@@ -107,5 +106,43 @@ public class Collection {
             }
         }
         return false;
+    }
+
+    // TODO: 20.01.2020 sortieren auch wenn gleicher anfangsbuchstabe..... 
+    public void sortVocabulary() {
+        List<Vocable> temp = new List<>();
+        boolean isIn = false;
+        vocabulary.toFirst();
+        while (vocabulary.hasAccess()) {
+            temp.append(vocabulary.getContent());
+            vocabulary.remove();
+        }
+        temp.toFirst();
+        while (temp.hasAccess()) {
+            isIn = false;
+            if(vocabulary.isEmpty()){
+                vocabulary.append(temp.getContent());
+            }
+            else{
+                vocabulary.toFirst();
+                while(vocabulary.hasAccess()){
+                    if(temp.getContent().getWord().toLowerCase().charAt(0)<vocabulary.getContent().getWord().toLowerCase().charAt(0)){
+                    vocabulary.insert(temp.getContent());
+                    isIn = true;
+                    break;
+                    }
+                    else if(temp.getContent().getWord().toLowerCase().charAt(0)==vocabulary.getContent().getWord().toLowerCase().charAt(0)){
+                        
+                    }
+                    vocabulary.next();
+                }
+                if(!isIn){
+                    vocabulary.append(temp.getContent());
+                }
+
+            }
+            temp.next();
+        }
+
     }
 }
