@@ -8,7 +8,7 @@ public class Main {
         collection.addVocable(new Vocable("Mischa", "Buch", Difficulty.NORMAL, 1, 0));
         collection.printVocabulary();
         System.out.println();
-        collection.sortVocabulary();
+        collection.sortVocabularyRandom();
         collection.printVocabulary();
         System.out.println();
         collection.exportVocabulary();

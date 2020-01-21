@@ -1,5 +1,7 @@
 package com.willis_chico.vocabulary_trainer;
 
+import java.util.Random;
+
 public class Collection {
     private List<Vocable> vocabulary;
     private FileEditor editor;
@@ -108,10 +110,10 @@ public class Collection {
         return false;
     }
 
-    // TODO: 20.01.2020 sortieren auch wenn gleicher anfangsbuchstabe..... 
-    public void sortVocabulary() {
+
+    //Alphabetisch sortieren(a;A;...z;Z)
+    public void sortVocabularyAlphabetic() {
         List<Vocable> temp = new List<>();
-        boolean isIn = false;
         vocabulary.toFirst();
         while (vocabulary.hasAccess()) {
             temp.append(vocabulary.getContent());
@@ -119,30 +121,107 @@ public class Collection {
         }
         temp.toFirst();
         while (temp.hasAccess()) {
-            isIn = false;
-            if(vocabulary.isEmpty()){
+            if (vocabulary.isEmpty()) {
                 vocabulary.append(temp.getContent());
-            }
-            else{
-                vocabulary.toFirst();
-                while(vocabulary.hasAccess()){
-                    if(temp.getContent().getWord().toLowerCase().charAt(0)<vocabulary.getContent().getWord().toLowerCase().charAt(0)){
-                    vocabulary.insert(temp.getContent());
-                    isIn = true;
-                    break;
-                    }
-                    else if(temp.getContent().getWord().toLowerCase().charAt(0)==vocabulary.getContent().getWord().toLowerCase().charAt(0)){
-                        
-                    }
-                    vocabulary.next();
-                }
-                if(!isIn){
+            } else {
+                vocabulary.toLast();
+                if (temp.getContent().getWord().compareToIgnoreCase(vocabulary.getContent().getWord()) > 0) {
                     vocabulary.append(temp.getContent());
+                } else {
+                    vocabulary.toFirst();
+                    while (vocabulary.hasAccess()) {
+                        if (temp.getContent().getWord().compareToIgnoreCase(vocabulary.getContent().getWord()) <= 0) {
+                            vocabulary.insert(temp.getContent());
+                            break;
+                        }
+                        vocabulary.next();
+                    }
                 }
-
             }
             temp.next();
         }
+    }
+    //nach Fehlern sortieren(5;....;0)
+    public void sortVocabularyNumberWrong() {
+        List<Vocable> temp = new List<>();
+        vocabulary.toFirst();
+        while (vocabulary.hasAccess()) {
+            temp.append(vocabulary.getContent());
+            vocabulary.remove();
+        }
+        temp.toFirst();
+        while (temp.hasAccess()) {
+            if (vocabulary.isEmpty()) {
+                vocabulary.append(temp.getContent());
+            } else {
+                vocabulary.toLast();
+                if (temp.getContent().getNumberWrong() < vocabulary.getContent().getNumberWrong()) {
+                    vocabulary.append(temp.getContent());
+                } else {
+                    vocabulary.toFirst();
+                    while (vocabulary.hasAccess()) {
+                        if (temp.getContent().getNumberWrong() >= vocabulary.getContent().getNumberWrong()) {
+                            vocabulary.insert(temp.getContent());
+                            break;
+                        }
+                        vocabulary.next();
+                    }
+                }
+            }
+            temp.next();
+        }
+    }
+    //nach schwierigkeit sortieren(HARD;...;EASY)
+    public void sortVocabularyDifficulty() {
+        List<Vocable> temp = new List<>();
+        vocabulary.toFirst();
+        while (vocabulary.hasAccess()) {
+            temp.append(vocabulary.getContent());
+            vocabulary.remove();
+        }
+        temp.toFirst();
+        while (temp.hasAccess()) {
+            if (vocabulary.isEmpty()) {
+                vocabulary.append(temp.getContent());
+            } else {
+                vocabulary.toLast();
+                if (temp.getContent().getDifficulty().getValue() < vocabulary.getContent().getDifficulty().getValue()) {
+                    vocabulary.append(temp.getContent());
+                } else {
+                    vocabulary.toFirst();
+                    while (vocabulary.hasAccess()) {
+                        if (temp.getContent().getDifficulty().getValue() >= vocabulary.getContent().getDifficulty().getValue()) {
+                            vocabulary.insert(temp.getContent());
+                            break;
+                        }
+                        vocabulary.next();
+                    }
+                }
+            }
+            temp.next();
+        }
+    }
+    //zufällig sortieren
+    public void sortVocabularyRandom() {
+        List<Vocable> temp = new List<>();
+        int length = 0;
+        vocabulary.toFirst();
+        while (vocabulary.hasAccess()) {
+            temp.append(vocabulary.getContent());
+            vocabulary.remove();
+            length++;
+        }
+        while (!temp.isEmpty()) {
+        temp.toFirst();
+            for (int i = 0; i < new Random().nextInt(length); i++) {
+                temp.next();
+            }
+            if(temp.hasAccess()){
+                vocabulary.append(temp.getContent());
+                temp.remove();
+                length--;
+            }
 
+        }
     }
 }
