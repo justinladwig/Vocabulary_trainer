@@ -3,15 +3,6 @@ package com.willis_chico.vocabulary_trainer;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
-
-/**
- *
- * Beschreibung
- *
- * @version 1.0 vom 20.01.2020
- * @author
- */
 
 public class StartWindow extends JFrame {
     // Anfang Attribute

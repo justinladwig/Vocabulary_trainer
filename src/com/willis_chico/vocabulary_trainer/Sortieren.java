@@ -3,15 +3,6 @@ package com.willis_chico.vocabulary_trainer;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
-
-/**
- *
- * Beschreibung
- *
- * @version 1.0 vom 21.01.2020
- * @author 
- */
 
 public class Sortieren extends JFrame {
   // Anfang Attribute
@@ -65,7 +56,7 @@ public class Sortieren extends JFrame {
   } // end of main
   
   public void bSort_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einf�gen
+    // TODO hier Quelltext einfügen
     
   } // end of bSort_ActionPerformed
 

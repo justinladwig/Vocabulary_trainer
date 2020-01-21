@@ -57,7 +57,7 @@ public class FileEditor {
     }
 
     // get- und set-Methode
-    public List getValues() {
+    public List<String[]> getValues() {
         return values;
     }
 
