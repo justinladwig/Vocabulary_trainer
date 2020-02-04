@@ -21,5 +21,13 @@ public class HG {
         collection.exportVocabulary();
         System.out.println("LUL");
     }
+    public Vocable search(String word, boolean translation){
+        if(translation){
+            return collection.searchVocableTranslation(word);
+        }
+        else {
+            return collection.searchVocable(word);
+        }
+    }
 
 }

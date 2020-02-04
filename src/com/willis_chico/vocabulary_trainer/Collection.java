@@ -99,6 +99,16 @@ public class Collection {
         return null;
     }
 
+    public Vocable searchVocableTranslation(String word) {
+        vocabulary.toFirst();
+        while (vocabulary.hasAccess()) {
+            if (vocabulary.getContent().getTranslation().equals(word)) {
+                return vocabulary.getContent();
+            }
+        }
+        return null;
+    }
+
     // Prüft, ob diese vokabel existiert
     public boolean existVocable(String word) {
         vocabulary.toFirst();
