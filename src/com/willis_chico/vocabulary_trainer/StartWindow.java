@@ -122,6 +122,7 @@ public class StartWindow extends JFrame {
     // Anfang Methoden
 
     public void bLern_ActionPerformed(ActionEvent evt) {
+        // TODO: 04.02.2020 SOrtieren 
         s.startLernWindow();
         dispose();
     } // end of bLern_ActionPerformed

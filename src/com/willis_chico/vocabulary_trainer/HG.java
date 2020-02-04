@@ -29,5 +29,20 @@ public class HG {
             return collection.searchVocable(word);
         }
     }
-
+    public void sort(String s){
+        switch (s){
+            case "random":
+                collection.sortVocabularyRandom();
+                break;
+            case "alphabetical":
+                collection.sortVocabularyAlphabetic();
+                break;
+            case "difficulty":
+                collection.sortVocabularyDifficulty();
+                break;
+            case "most wrong":
+                collection.sortVocabularyNumberWrong();
+                break;
+        }
+    }
 }
