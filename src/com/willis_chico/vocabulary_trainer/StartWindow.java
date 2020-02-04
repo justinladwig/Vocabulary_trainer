@@ -23,11 +23,14 @@ public class StartWindow extends JFrame {
     private JLabel lSortby1 = new JLabel();
     private JComboBox<String> jComboBox1 = new JComboBox<String>();
     private DefaultComboBoxModel<String> jComboBox1Model = new DefaultComboBoxModel<String>();
+
+    private HG s;
     // Ende Attribute
 
-    public StartWindow() {
+    public StartWindow(HG s) {
         // Frame-Initialisierung
         super();
+        this.s = s;
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 700;
         int frameHeight = 540;
@@ -40,6 +43,14 @@ public class StartWindow extends JFrame {
         setResizable(false);
         Container cp = getContentPane();
         cp.setLayout(null);
+        addWindowListener(new WindowAdapter()
+        {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                e.getWindow().dispose();
+                s.exit();
+            }
+        });
         // Anfang Komponenten
 
         bLern.setBounds(200, 50, 300, 75);
@@ -110,13 +121,9 @@ public class StartWindow extends JFrame {
 
     // Anfang Methoden
 
-    public static void main(String[] args) {
-        new StartWindow();
-    } // end of main
-
     public void bLern_ActionPerformed(ActionEvent evt) {
-        // TODO hier Quelltext einfügen
-
+        s.startLernWindow();
+        dispose();
     } // end of bLern_ActionPerformed
 
     public void bSearch_ActionPerformed(ActionEvent evt) {
@@ -135,8 +142,8 @@ public class StartWindow extends JFrame {
     } // end of bDeletevocable_ActionPerformed
 
     public void bSaveClose1_ActionPerformed(ActionEvent evt) {
-        // TODO hier Quelltext einfügen
-
+        dispose();
+        s.exit();
     } // end of bSaveClose1_ActionPerformed
 
     // Ende Methoden
