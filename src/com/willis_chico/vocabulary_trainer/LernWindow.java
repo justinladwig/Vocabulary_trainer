@@ -3,7 +3,6 @@ package com.willis_chico.vocabulary_trainer;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
 /**
  *
@@ -13,7 +12,7 @@ import javax.swing.event.*;
  * @author 
  */
 
-public class Lern extends JFrame {
+public class LernWindow extends JFrame {
   // Anfang Attribute
   private JLabel jLabel1 = new JLabel();
   private JTextArea jTextArea1 = new JTextArea("");
@@ -23,11 +22,14 @@ public class Lern extends JFrame {
   private JLabel lGerman = new JLabel();
   private JLabel lEnglish = new JLabel();
   private JLabel lGermanEnglish1 = new JLabel();
+
+  private HG s;
   // Ende Attribute
   
-  public Lern() { 
+  public LernWindow(HG s) {
     // Frame-Initialisierung
     super();
+    this.s = s;
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 700; 
     int frameHeight = 540;
@@ -40,8 +42,24 @@ public class Lern extends JFrame {
     setResizable(false);
     Container cp = getContentPane();
     cp.setLayout(null);
+    addWindowListener(new WindowAdapter()
+    {
+      @Override
+      public void windowClosing(WindowEvent e)
+      {
+        e.getWindow().dispose();
+        s.startStartWindow();
+      }
+    });
+
     // Anfang Komponenten
-    
+    addWindowListener(new WindowAdapter()
+    {
+      @Override
+      public void windowClosing(WindowEvent e) {
+        e.getWindow().dispose();
+      }
+    });
     jLabel1.setBounds(20, 80, 300, 400);
     jLabel1.setText("");
     jLabel1.setFont(new Font("Dialog", Font.BOLD, 20));
@@ -92,11 +110,7 @@ public class Lern extends JFrame {
   } // end of public Lern
   
   // Anfang Methoden
-  
-  public static void main(String[] args) {
-    new Lern();
-  } // end of main
-  
+
   public void bNext_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
     

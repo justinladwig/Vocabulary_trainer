@@ -87,7 +87,7 @@ public class Collection {
         }
     }
 
-    // TODO: 18.01.2020 diese beiden Methode überprüfen 
+    // TODO: 18.01.2020 diese beiden Methode überprüfen
     //Vokabel suchen
     public Vocable searchVocable(String word) {
         vocabulary.toFirst();
