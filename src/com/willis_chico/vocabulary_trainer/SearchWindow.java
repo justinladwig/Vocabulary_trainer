@@ -24,7 +24,7 @@ public class SearchWindow extends JFrame {
     private boolean closed = false;
     // Ende Attribute
 
-    public SearchWindow() {
+    public SearchWindow(HG hg) {
         // Frame-Initialisierung
         super();
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -88,10 +88,6 @@ public class SearchWindow extends JFrame {
     } // end of public SearchWindow
 
     // Anfang Methoden
-
-    public static void main(String[] args) {
-        new SearchWindow();
-    } // end of main
 
     public void button_ActionPerformed(ActionEvent evt) {
         // TODO hier Quelltext einfügen

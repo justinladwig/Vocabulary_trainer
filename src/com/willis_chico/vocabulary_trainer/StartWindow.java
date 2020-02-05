@@ -3,7 +3,6 @@ package com.willis_chico.vocabulary_trainer;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
 /**
  *
@@ -54,11 +53,11 @@ public class StartWindow extends JFrame {
         // Anfang Komponenten
 
         bLern.setBounds(200, 50, 300, 75);
-        bLern.setText("Lern");
+        bLern.setText("Learn");
         bLern.setMargin(new Insets(2, 2, 2, 2));
         bLern.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                bLern_ActionPerformed(evt);
+                bLearn_ActionPerformed(evt);
             }
         });
         bLern.setFont(new Font("Dialog", Font.BOLD, 25));
@@ -77,7 +76,7 @@ public class StartWindow extends JFrame {
         bAddvocable1.setMargin(new Insets(2, 2, 2, 2));
         bAddvocable1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                bAddvocable1_ActionPerformed(evt);
+                bAddVocable1_ActionPerformed(evt);
             }
         });
         cp.add(bAddvocable1);
@@ -86,7 +85,7 @@ public class StartWindow extends JFrame {
         bDeletevocable.setMargin(new Insets(2, 2, 2, 2));
         bDeletevocable.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                bDeletevocable_ActionPerformed(evt);
+                bDeleteVocable_ActionPerformed(evt);
             }
         });
         cp.add(bDeletevocable);
@@ -121,26 +120,29 @@ public class StartWindow extends JFrame {
 
     // Anfang Methoden
 
-    public void bLern_ActionPerformed(ActionEvent evt) {
-        // TODO: 04.02.2020 SOrtieren 
-        s.startLernWindow();
+    public void bLearn_ActionPerformed(ActionEvent evt) {
+        // TODO: 04.02.2020 Sortieren
+        System.out.println(jComboBox1.getSelectedItem());
+        s.sort(jComboBox1.getSelectedItem().toString());
+        s.startLearnWindow();
         dispose();
-    } // end of bLern_ActionPerformed
+    } // end of bLearn_ActionPerformed
 
     public void bSearch_ActionPerformed(ActionEvent evt) {
-        // TODO hier Quelltext einfügen
+        s.startSearchWindow();
+        dispose();
 
     } // end of bSearch_ActionPerformed
 
-    public void bAddvocable1_ActionPerformed(ActionEvent evt) {
+    public void bAddVocable1_ActionPerformed(ActionEvent evt) {
         // TODO hier Quelltext einfügen
 
-    } // end of bAddvocable1_ActionPerformed
+    } // end of bAddVocable1_ActionPerformed
 
-    public void bDeletevocable_ActionPerformed(ActionEvent evt) {
+    public void bDeleteVocable_ActionPerformed(ActionEvent evt) {
         // TODO hier Quelltext einfügen
 
-    } // end of bDeletevocable_ActionPerformed
+    } // end of bDeleteVocable_ActionPerformed
 
     public void bSaveClose1_ActionPerformed(ActionEvent evt) {
         dispose();

@@ -5,18 +5,17 @@ import java.awt.event.*;
 import javax.swing.*;
 
 /**
- *
  * Beschreibung
  *
+ * @author
  * @version 1.0 vom 22.01.2020
- * @author 
  */
 
-public class LernWindow extends JFrame {
+public class LearnWindow extends JFrame {
   // Anfang Attribute
   private JLabel jLabel1 = new JLabel();
   private JTextArea jTextArea1 = new JTextArea("");
-    private JScrollPane jTextArea1ScrollPane = new JScrollPane(jTextArea1);
+  private JScrollPane jTextArea1ScrollPane = new JScrollPane(jTextArea1);
   private JLabel lPractice1 = new JLabel();
   private JButton bNext = new JButton();
   private JLabel lGerman = new JLabel();
@@ -26,19 +25,19 @@ public class LernWindow extends JFrame {
   private HG s;
   // Ende Attribute
   
-  public LernWindow(HG s) {
+  public LearnWindow(HG s) {
     // Frame-Initialisierung
     super();
     this.s = s;
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 700; 
+    int frameWidth = 700;
     int frameHeight = 540;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
     int y = (d.height - getSize().height) / 2;
     setLocation(x, y);
-    setTitle("Lern");
+    setTitle("Learn");
     setResizable(false);
     Container cp = getContentPane();
     cp.setLayout(null);
@@ -53,13 +52,6 @@ public class LernWindow extends JFrame {
     });
 
     // Anfang Komponenten
-    addWindowListener(new WindowAdapter()
-    {
-      @Override
-      public void windowClosing(WindowEvent e) {
-        e.getWindow().dispose();
-      }
-    });
     jLabel1.setBounds(20, 80, 300, 400);
     jLabel1.setText("");
     jLabel1.setFont(new Font("Dialog", Font.BOLD, 20));
@@ -101,21 +93,21 @@ public class LernWindow extends JFrame {
     lEnglish.setHorizontalAlignment(SwingConstants.CENTER);
     cp.add(lEnglish);
     lGermanEnglish1.setBounds(290, 0, 110, 20);
-    lGermanEnglish1.setText("German => English");
+    lGermanEnglish1.setText("German → English");
     cp.add(lGermanEnglish1);
     // Ende Komponenten
     cp.add(jTextArea1ScrollPane);
 
     setVisible(true);
-  } // end of public Lern
-  
+  } // end of public Learn
+
   // Anfang Methoden
 
   public void bNext_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
-    
+
   } // end of bNext_ActionPerformed
 
   // Ende Methoden
-} // end of class Lern
+} // end of class Learn
 
