@@ -22,13 +22,13 @@ public class LearnWindow extends JFrame {
   private JLabel lEnglish = new JLabel();
   private JLabel lGermanEnglish1 = new JLabel();
 
-  private HG s;
+  private MainFunctions mainFunctions;
   // Ende Attribute
-  
-  public LearnWindow(HG s) {
+
+  public LearnWindow(MainFunctions mainFunctions) {
     // Frame-Initialisierung
     super();
-    this.s = s;
+    this.mainFunctions = mainFunctions;
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 700;
     int frameHeight = 540;
@@ -47,7 +47,7 @@ public class LearnWindow extends JFrame {
       public void windowClosing(WindowEvent e)
       {
         e.getWindow().dispose();
-        s.startStartWindow();
+        mainFunctions.startStartWindow();
       }
     });
 

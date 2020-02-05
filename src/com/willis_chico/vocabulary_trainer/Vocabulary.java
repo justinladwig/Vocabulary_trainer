@@ -2,11 +2,11 @@ package com.willis_chico.vocabulary_trainer;
 
 import java.util.Random;
 
-public class Collection {
+public class Vocabulary {
     private List<Vocable> vocabulary;
     private FileEditor editor;
 
-    public Collection() {
+    public Vocabulary() {
         vocabulary = new List<>();
         editor = new FileEditor("res/vocable.csv");
     }

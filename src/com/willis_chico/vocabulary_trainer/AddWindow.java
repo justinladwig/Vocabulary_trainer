@@ -3,7 +3,6 @@ package com.willis_chico.vocabulary_trainer;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
 /**
  *
@@ -22,11 +21,14 @@ public class AddWindow extends JFrame {
     private JButton bAdd = new JButton();
     private JComboBox<String> jComboBox1 = new JComboBox<String>();
     private DefaultComboBoxModel<String> jComboBox1Model = new DefaultComboBoxModel<String>();
+
+    private MainFunctions mainFunctions;
     // Ende Attribute
 
-    public AddWindow() {
+    public AddWindow(MainFunctions mainFunctions) {
         // Frame-Initialisierung
         super();
+        this.mainFunctions = mainFunctions;
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 600;
         int frameHeight = 400;
@@ -39,6 +41,13 @@ public class AddWindow extends JFrame {
         setResizable(false);
         Container cp = getContentPane();
         cp.setLayout(null);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                e.getWindow().dispose();
+                mainFunctions.startStartWindow();
+            }
+        });
         // Anfang Komponenten
 
         lGermanword1.setBounds(100, 60, 150, 28);
@@ -80,10 +89,6 @@ public class AddWindow extends JFrame {
     } // end of public AddWindow
 
     // Anfang Methoden
-
-    public static void main(String[] args) {
-        new AddWindow();
-    } // end of main
 
     public void bAdd_ActionPerformed(ActionEvent evt) {
         // TODO hier Quelltext einfügen

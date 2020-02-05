@@ -23,13 +23,13 @@ public class StartWindow extends JFrame {
     private JComboBox<String> jComboBox1 = new JComboBox<String>();
     private DefaultComboBoxModel<String> jComboBox1Model = new DefaultComboBoxModel<String>();
 
-    private HG s;
+    private MainFunctions mainFunctions;
     // Ende Attribute
 
-    public StartWindow(HG s) {
+    public StartWindow(MainFunctions mainFunctions) {
         // Frame-Initialisierung
         super();
-        this.s = s;
+        this.mainFunctions = mainFunctions;
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 700;
         int frameHeight = 540;
@@ -47,7 +47,7 @@ public class StartWindow extends JFrame {
             @Override
             public void windowClosing(WindowEvent e) {
                 e.getWindow().dispose();
-                s.exit();
+                mainFunctions.exit();
             }
         });
         // Anfang Komponenten
@@ -123,19 +123,20 @@ public class StartWindow extends JFrame {
     public void bLearn_ActionPerformed(ActionEvent evt) {
         // TODO: 04.02.2020 Sortieren
         System.out.println(jComboBox1.getSelectedItem());
-        s.sort(jComboBox1.getSelectedItem().toString());
-        s.startLearnWindow();
+        mainFunctions.sort(jComboBox1.getSelectedItem().toString());
+        mainFunctions.startLearnWindow();
         dispose();
     } // end of bLearn_ActionPerformed
 
     public void bSearch_ActionPerformed(ActionEvent evt) {
-        s.startSearchWindow();
+        mainFunctions.startSearchWindow();
         dispose();
 
     } // end of bSearch_ActionPerformed
 
     public void bAddVocable1_ActionPerformed(ActionEvent evt) {
-        // TODO hier Quelltext einfügen
+        mainFunctions.startAddWindow();
+        dispose();
 
     } // end of bAddVocable1_ActionPerformed
 
@@ -146,7 +147,7 @@ public class StartWindow extends JFrame {
 
     public void bSaveClose1_ActionPerformed(ActionEvent evt) {
         dispose();
-        s.exit();
+        mainFunctions.exit();
     } // end of bSaveClose1_ActionPerformed
 
     // Ende Methoden
