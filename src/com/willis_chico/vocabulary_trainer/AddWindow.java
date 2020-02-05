@@ -20,7 +20,7 @@ public class AddWindow extends JFrame {
   private JTextField jTextField2 = new JTextField();
   private JButton bAdd = new JButton();
   private JComboBox<String> jComboBox1 = new JComboBox<String>();
-    private DefaultComboBoxModel<String> jComboBox1Model = new DefaultComboBoxModel<String>();
+  private DefaultComboBoxModel<String> jComboBox1Model = new DefaultComboBoxModel<String>();
   private JLabel lDifficulty = new JLabel();
 
   private MainFunctions mainFunctions;
@@ -68,15 +68,14 @@ public class AddWindow extends JFrame {
     bAdd.setBounds(313, 350, 75, 50);
     bAdd.setText("add");
     bAdd.setMargin(new Insets(2, 2, 2, 2));
-    bAdd.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
+    bAdd.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent evt) {
         bAdd_ActionPerformed(evt);
       }
     });
     bAdd.setFont(new Font("Dialog", Font.BOLD, 20));
     cp.add(bAdd);
     jComboBox1.setModel(jComboBox1Model);
-    jComboBox1.setBounds(305, 275, 90, 20);
+    jComboBox1.setBounds(305, 275, 90, 25);
     jComboBox1.setFont(new Font("Dialog", Font.BOLD, 15));
     jComboBox1.setCursor(new Cursor(Cursor.HAND_CURSOR));
     jComboBox1Model.addElement("easy");
