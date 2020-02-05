@@ -9,91 +9,98 @@ import javax.swing.*;
  * Beschreibung
  *
  * @version 1.0 vom 05.02.2020
- * @author
+ * @author 
  */
 
 public class AddWindow extends JFrame {
-    // Anfang Attribute
-    private JLabel lGermanword1 = new JLabel();
-    private JLabel lEnglishword = new JLabel();
-    private JTextField jTextField1 = new JTextField();
-    private JTextField jTextField2 = new JTextField();
-    private JButton bAdd = new JButton();
-    private JComboBox<String> jComboBox1 = new JComboBox<String>();
+  // Anfang Attribute
+  private JLabel lGermanword = new JLabel();
+  private JLabel lEnglishword = new JLabel();
+  private JTextField jTextField1 = new JTextField();
+  private JTextField jTextField2 = new JTextField();
+  private JButton bAdd = new JButton();
+  private JComboBox<String> jComboBox1 = new JComboBox<String>();
     private DefaultComboBoxModel<String> jComboBox1Model = new DefaultComboBoxModel<String>();
+  private JLabel lDifficulty = new JLabel();
 
-    private MainFunctions mainFunctions;
-    // Ende Attribute
+  private MainFunctions mainFunctions;
+  // Ende Attribute
+  
+  public AddWindow(MainFunctions mainFunctions) {
+    // Frame-Initialisierung
+    super();
+    this.mainFunctions = mainFunctions;
+    setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+    int frameWidth = 700; 
+    int frameHeight = 540;
+    setSize(frameWidth, frameHeight);
+    Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+    int x = (d.width - getSize().width) / 2;
+    int y = (d.height - getSize().height) / 2;
+    setLocation(x, y);
+    setTitle("AddWindow");
+    setResizable(false);
+    Container cp = getContentPane();
+    cp.setLayout(null);
+    addWindowListener(new WindowAdapter() {
+      @Override
+      public void windowClosing(WindowEvent e) {
+        e.getWindow().dispose();
+        mainFunctions.startStartWindow();
+      }
+    });
+    // Anfang Komponenten
+    
+    lGermanword.setBounds(100, 60, 150, 28);
+    lGermanword.setText("German word");
+    lGermanword.setHorizontalAlignment(SwingConstants.CENTER);
+    lGermanword.setFont(new Font("Dialog", Font.BOLD, 20));
+    cp.add(lGermanword);
+    lEnglishword.setBounds(450, 60, 150, 28);
+    lEnglishword.setText("English word");
+    lEnglishword.setHorizontalAlignment(SwingConstants.CENTER);
+    lEnglishword.setFont(new Font("Dialog", Font.BOLD, 20));
+    cp.add(lEnglishword);
+    jTextField1.setBounds(100, 190, 150, 20);
+    cp.add(jTextField1);
+    jTextField2.setBounds(450, 190, 150, 20);
+    cp.add(jTextField2);
+    bAdd.setBounds(313, 350, 75, 50);
+    bAdd.setText("add");
+    bAdd.setMargin(new Insets(2, 2, 2, 2));
+    bAdd.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        bAdd_ActionPerformed(evt);
+      }
+    });
+    bAdd.setFont(new Font("Dialog", Font.BOLD, 20));
+    cp.add(bAdd);
+    jComboBox1.setModel(jComboBox1Model);
+    jComboBox1.setBounds(305, 275, 90, 20);
+    jComboBox1.setFont(new Font("Dialog", Font.BOLD, 15));
+    jComboBox1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    jComboBox1Model.addElement("easy");
+    jComboBox1Model.addElement("normal");
+    jComboBox1Model.addElement("hard");
+    jComboBox1.setSelectedIndex(1);
+    cp.add(jComboBox1);
+    lDifficulty.setBounds(305, 238, 90, 22);
+    lDifficulty.setText("difficulty:");
+    lDifficulty.setHorizontalAlignment(SwingConstants.LEFT);
+    lDifficulty.setFont(new Font("Dialog", Font.BOLD, 15));
+    cp.add(lDifficulty);
+    // Ende Komponenten
+    
+    setVisible(true);
+  } // end of public AddWindow
+  
+  // Anfang Methoden
+  
+  public void bAdd_ActionPerformed(ActionEvent evt) {
+    // TODO hier Quelltext einfügen
+    
+  } // end of bAdd_ActionPerformed
 
-    public AddWindow(MainFunctions mainFunctions) {
-        // Frame-Initialisierung
-        super();
-        this.mainFunctions = mainFunctions;
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        int frameWidth = 600;
-        int frameHeight = 400;
-        setSize(frameWidth, frameHeight);
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (d.width - getSize().width) / 2;
-        int y = (d.height - getSize().height) / 2;
-        setLocation(x, y);
-        setTitle("AddWindow");
-        setResizable(false);
-        Container cp = getContentPane();
-        cp.setLayout(null);
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                e.getWindow().dispose();
-                mainFunctions.startStartWindow();
-            }
-        });
-        // Anfang Komponenten
-
-        lGermanword1.setBounds(100, 60, 150, 28);
-        lGermanword1.setText("German word");
-        lGermanword1.setHorizontalAlignment(SwingConstants.CENTER);
-        lGermanword1.setFont(new Font("Dialog", Font.BOLD, 20));
-        cp.add(lGermanword1);
-        lEnglishword.setBounds(350, 60, 150, 28);
-        lEnglishword.setText("English word");
-        lEnglishword.setHorizontalAlignment(SwingConstants.CENTER);
-        lEnglishword.setFont(new Font("Dialog", Font.BOLD, 20));
-        cp.add(lEnglishword);
-        jTextField1.setBounds(100, 150, 150, 20);
-        cp.add(jTextField1);
-        jTextField2.setBounds(350, 150, 150, 20);
-        cp.add(jTextField2);
-        bAdd.setBounds(263, 250, 75, 50);
-        bAdd.setText("add");
-        bAdd.setMargin(new Insets(2, 2, 2, 2));
-        bAdd.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                bAdd_ActionPerformed(evt);
-            }
-        });
-        bAdd.setFont(new Font("Dialog", Font.BOLD, 20));
-        cp.add(bAdd);
-        jComboBox1.setModel(jComboBox1Model);
-        jComboBox1.setBounds(255, 100, 90, 20);
-        jComboBox1.setFont(new Font("Dialog", Font.BOLD, 15));
-        jComboBox1Model.addElement("easy");
-        jComboBox1Model.addElement("medium");
-        jComboBox1Model.addElement("hard");
-        jComboBox1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        jComboBox1.setSelectedIndex(1);
-        cp.add(jComboBox1);
-        // Ende Komponenten
-
-        setVisible(true);
-    } // end of public AddWindow
-
-    // Anfang Methoden
-
-    public void bAdd_ActionPerformed(ActionEvent evt) {
-        // TODO hier Quelltext einfügen
-
-    } // end of bAdd_ActionPerformed
-
-    // Ende Methoden
+  // Ende Methoden
 } // end of class AddWindow
+
