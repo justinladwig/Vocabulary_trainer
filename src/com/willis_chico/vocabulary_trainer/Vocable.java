@@ -19,6 +19,10 @@ public class Vocable {
         return word;
     }
 
+    public void setWord(String word) {
+        this.word = word;
+    }
+
     public String getTranslation() {
         return translation;
     }

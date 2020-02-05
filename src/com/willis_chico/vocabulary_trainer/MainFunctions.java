@@ -30,9 +30,9 @@ public class MainFunctions {
         System.out.println("LUL");
     }
 
-//    public void addVocable() {
-//        vocabulary.addVocable();
-//    }
+    public void addVocable(String word, String translation, Difficulty difficulty, int numberWrong, int numberRight) {
+        vocabulary.addVocable(new Vocable(word, translation, difficulty, numberWrong, numberRight));
+    }
 
     public Vocable search(String word, boolean translation) {
         if (translation) {
