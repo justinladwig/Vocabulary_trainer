@@ -27,7 +27,6 @@ public class SearchWindow extends JFrame {
     private JComboBox<String> jComboBox1 = new JComboBox<String>();
     private DefaultComboBoxModel<String> jComboBox1Model = new DefaultComboBoxModel<String>();
     private JButton button = new JButton();
-    private boolean closed = false;
 
     private MainFunctions mainFunctions;
     // Ende Attribute
@@ -83,7 +82,19 @@ public class SearchWindow extends JFrame {
         jComboBox1.setBounds(250, 45, 200, 20);
         jComboBox1Model.addElement("German to English");
         jComboBox1Model.addElement("English to German");
-
+        jComboBox1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (jComboBox1Model.getSelectedItem().equals("English to German")){
+                    label1.setText("English");
+                    label2.setText("German");
+                }
+                else{
+                    label1.setText("German");
+                    label2.setText("English");
+                }
+            }
+        });
         button.setBounds(300, 320, 100, 50);
         button.setText("translate");
         button.setMargin(new Insets(2, 2, 2, 2));
@@ -99,18 +110,6 @@ public class SearchWindow extends JFrame {
         // Ende Komponenten
 
         setVisible(true);
-
-
-        while(!closed){
-            if (jComboBox1Model.getSelectedItem().equals("English to German")){
-                label1.setText("English");
-                label2.setText("German");
-            }
-            else{
-                label1.setText("German");
-                label2.setText("English");
-            }
-        }
     } // end of public SearchWindow
 
     // Anfang Methoden
