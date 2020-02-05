@@ -95,6 +95,7 @@ public class Vocabulary {
             if (vocabulary.getContent().getWord().equals(word)) {
                 return vocabulary.getContent();
             }
+            vocabulary.next();
         }
         return null;
     }
@@ -105,6 +106,7 @@ public class Vocabulary {
             if (vocabulary.getContent().getTranslation().equals(word)) {
                 return vocabulary.getContent();
             }
+            vocabulary.next();
         }
         return null;
     }
