@@ -118,12 +118,48 @@ public class SearchWindow extends JFrame {
     // Anfang Methoden
 
     public void button_ActionPerformed(ActionEvent evt) {
-        label3.setText("ja nein ja nein");
-        rightV.setText("10");
-        wrongV.setText("10");
-        difficultyV.setText("normal");
+        Vocable vocable;
+        if (jComboBox1Model.getSelectedItem().equals("English to German")){
+            vocable=mainFunctions.search(jTextField1.getText(), true);
+        }
+        else{
+            vocable=mainFunctions.search(jTextField1.getText(), false);
+        }
+
+
+        if(vocable==null){
+            clearLabels();
+            JOptionPane.showMessageDialog(null, "This vocable does not exist!", "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            if (jComboBox1Model.getSelectedItem().equals("English to German")) label3.setText(vocable.getWord());
+            else label3.setText(vocable.getTranslation());
+            rightV.setText(Integer.toString(vocable.getNumberRight()));
+            wrongV.setText(Integer.toString(vocable.getNumberWrong()));
+            switch (vocable.getDifficulty()){
+                case EASY:
+                    difficultyV.setText("easy");
+                    break;
+                case NORMAL:
+                    difficultyV.setText("normal");
+                    break;
+                case HARD:
+                    difficultyV.setText("hard");
+                    break;
+            }
+
+        }
+
+
+
 
     } // end of button_ActionPerformed
 
+    public void clearLabels(){
+        label3.setText("");
+        rightV.setText("");
+        wrongV.setText("");
+        difficultyV.setText("");
+    }
     // Ende Methoden
 } // end of class SearchWindow
