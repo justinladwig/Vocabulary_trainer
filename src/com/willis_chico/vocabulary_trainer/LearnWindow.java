@@ -16,12 +16,16 @@ public class LearnWindow extends JFrame {
   private JLabel lGermanEnglish1 = new JLabel();
 
   private MainFunctions mainFunctions;
+  private List<Vocable> vocableList;
+  private Vocabulary vocabulary;
   // Ende Attribute
 
-  public LearnWindow(MainFunctions mainFunctions) {
+  public LearnWindow(MainFunctions mainFunctions, Vocabulary vocabulary) {
     // Frame-Initialisierung
     super();
     this.mainFunctions = mainFunctions;
+    this.vocabulary = vocabulary;
+    this.vocableList = vocabulary.getVocabulary();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 700;
     int frameHeight = 540;
@@ -56,7 +60,7 @@ public class LearnWindow extends JFrame {
     cp.add(jLabel1);
     jTextArea1ScrollPane.setBounds(364, 80, 300, 400);
     jTextArea1.setWrapStyleWord(false);
-    jTextArea1.setToolTipText("Translation");
+    jTextArea1.setFont(new Font("Dialog", Font.BOLD, 20));
     lPractice1.setBounds(0, 0, 140, 40);
     lPractice1.setText("Practice:");
     lPractice1.setFont(new Font("@Microsoft JhengHei UI", Font.BOLD, 28));
@@ -91,6 +95,8 @@ public class LearnWindow extends JFrame {
     // Ende Komponenten
     cp.add(jTextArea1ScrollPane);
 
+    vocableList.toFirst();
+    jLabel1.setText(vocableList.getContent().getWord());
     setVisible(true);
   } // end of public Learn
 
@@ -98,7 +104,25 @@ public class LearnWindow extends JFrame {
 
   public void bNext_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
-
+    if (jTextArea1.getText().trim().equals(vocableList.getContent().getTranslation())) {
+      vocabulary.addRight();
+      JOptionPane.showMessageDialog(null, "Correct!", "Correct!", JOptionPane.INFORMATION_MESSAGE);
+    } else if (jTextArea1.getText().trim().equals("")) {
+      JOptionPane.showMessageDialog(null, "Are all fields filled?", "Failed!", JOptionPane.ERROR_MESSAGE);
+      return;
+    } else {
+      vocabulary.addWrong();
+      JOptionPane.showMessageDialog(null, String.format("Wrong answer!\n" + "the correct one is: %s", vocableList.getContent().getTranslation()), "Wrong answer!", JOptionPane.WARNING_MESSAGE);
+    }
+    vocableList.next();
+    if (vocableList.getContent() != null) {
+      jLabel1.setText(vocableList.getContent().getWord());
+      jTextArea1.setText("");
+    } else {
+      JOptionPane.showMessageDialog(null, "You learned all vocabulary!", "Finish!", JOptionPane.INFORMATION_MESSAGE);
+      dispose();
+      mainFunctions.startStartWindow();
+    }
   } // end of bNext_ActionPerformed
 
   // Ende Methoden

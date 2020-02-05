@@ -85,6 +85,7 @@ public class Vocabulary {
             }
         }
     }
+
     public void deleteVocableTranslation(String word) {
         vocabulary.toFirst();
         while (vocabulary.hasAccess()) {
@@ -161,6 +162,7 @@ public class Vocabulary {
             temp.next();
         }
     }
+
     //nach Fehlern sortieren(5;....;0)
     public void sortVocabularyNumberWrong() {
         List<Vocable> temp = new List<>();
@@ -191,6 +193,7 @@ public class Vocabulary {
             temp.next();
         }
     }
+
     //nach schwierigkeit sortieren(HARD;...;EASY)
     public void sortVocabularyDifficulty() {
         List<Vocable> temp = new List<>();
@@ -221,6 +224,7 @@ public class Vocabulary {
             temp.next();
         }
     }
+
     //zufällig sortieren
     public void sortVocabularyRandom() {
         List<Vocable> temp = new List<>();
@@ -232,16 +236,27 @@ public class Vocabulary {
             length++;
         }
         while (!temp.isEmpty()) {
-        temp.toFirst();
+            temp.toFirst();
             for (int i = 0; i < new Random().nextInt(length); i++) {
                 temp.next();
             }
-            if(temp.hasAccess()){
+            if (temp.hasAccess()) {
                 vocabulary.append(temp.getContent());
                 temp.remove();
                 length--;
             }
-
         }
+    }
+
+    public List<Vocable> getVocabulary() {
+        return vocabulary;
+    }
+
+    public void addWrong() {
+        vocabulary.getContent().setNumberWrong(vocabulary.getContent().getNumberWrong() + 1);
+    }
+
+    public void addRight() {
+        vocabulary.getContent().setNumberRight(vocabulary.getContent().getNumberRight() + 1);
     }
 }

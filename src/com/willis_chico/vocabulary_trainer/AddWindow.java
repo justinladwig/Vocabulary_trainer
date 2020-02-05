@@ -116,6 +116,8 @@ public class AddWindow extends JFrame {
         if (!inputVocable.equals("") && !inputTranslatedVocable.equals("")) {
             mainFunctions.addVocable(inputVocable, inputTranslatedVocable, selectedDifficulty, 0, 0);
             JOptionPane.showMessageDialog(null, "Successfully added vocable!", "Success!", JOptionPane.INFORMATION_MESSAGE);
+            jTextField1.setText("");
+            jTextField2.setText("");
         } else {
             JOptionPane.showMessageDialog(null, "Failed to add vocable!\n" + "Are all fields filled?", "Failed!", JOptionPane.ERROR_MESSAGE);
         }

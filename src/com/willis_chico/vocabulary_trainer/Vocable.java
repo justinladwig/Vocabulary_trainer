@@ -19,10 +19,6 @@ public class Vocable {
         return word;
     }
 
-    public void setWord(String word) {
-        this.word = word;
-    }
-
     public String getTranslation() {
         return translation;
     }
@@ -37,5 +33,13 @@ public class Vocable {
 
     public int getNumberRight() {
         return numberRight;
+    }
+
+    public void setNumberWrong(int numberWrong) {
+        this.numberWrong = numberWrong;
+    }
+
+    public void setNumberRight(int numberRight) {
+        this.numberRight = numberRight;
     }
 }

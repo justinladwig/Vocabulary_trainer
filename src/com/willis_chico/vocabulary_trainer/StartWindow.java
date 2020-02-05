@@ -16,11 +16,13 @@ public class StartWindow extends JFrame {
     private DefaultComboBoxModel<String> jComboBox1Model = new DefaultComboBoxModel<String>();
 
     private MainFunctions mainFunctions;
+    private Vocabulary vocabulary;
     // Ende Attribute
 
-    public StartWindow(MainFunctions mainFunctions) {
+    public StartWindow(MainFunctions mainFunctions, Vocabulary vocabulary) {
         // Frame-Initialisierung
         super();
+        this.vocabulary = vocabulary;
         this.mainFunctions = mainFunctions;
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 700;
@@ -113,9 +115,16 @@ public class StartWindow extends JFrame {
     // Anfang Methoden
 
     public void bLearn_ActionPerformed(ActionEvent evt) {
-        mainFunctions.sort(jComboBox1.getSelectedItem().toString());
-        mainFunctions.startLearnWindow();
-        dispose();
+        if (vocabulary.getVocabulary().isEmpty()) {
+            if (JOptionPane.showConfirmDialog(null, "You have not added any vocabulary yet.\n" + "Do you want to add?", "No vocabulary added.", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE) == 0) {
+                mainFunctions.startAddWindow();
+                dispose();
+            }
+        } else {
+            mainFunctions.sort(jComboBox1.getSelectedItem().toString());
+            mainFunctions.startLearnWindow();
+            dispose();
+        }
     } // end of bLearn_ActionPerformed
 
     public void bSearch_ActionPerformed(ActionEvent evt) {

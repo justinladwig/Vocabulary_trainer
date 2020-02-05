@@ -72,14 +72,13 @@ public class DeleteWindow extends JFrame {
       JOptionPane.showMessageDialog(null, "Failed to delete vocable!\n" + "Are all fields filled?", "Failed!", JOptionPane.ERROR_MESSAGE);
     }
     else {
-      if(jComboBox1.getSelectedItem().toString().equals("English")){
-        if(mainFunctions.search(jTextField.getText().trim(),true)==null){
+      if (jComboBox1.getSelectedItem().toString().equals("Englisch")) {
+        if (mainFunctions.search(jTextField.getText().trim(), true) == null) {
           JOptionPane.showMessageDialog(null, "This vocable does not exist!", "Error", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{
+        } else {
           if (JOptionPane.showConfirmDialog(null, "Do you really want to delete the vocable?", "Delete vocable", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE) == 0) {
             JOptionPane.showMessageDialog(null, "Vocable successful deleted!", "Deleted!", JOptionPane.INFORMATION_MESSAGE);
-            mainFunctions.delete(jTextField.getText().trim(),true);
+            mainFunctions.delete(jTextField.getText().trim(), true);
           }
         }
       }

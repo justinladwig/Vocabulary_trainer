@@ -10,11 +10,11 @@ public class MainFunctions {
     }
 
     public void startLearnWindow() {
-        new LearnWindow(this);
+        new LearnWindow(this, vocabulary);
     }
 
     public void startStartWindow() {
-        new StartWindow(this);
+        new StartWindow(this, vocabulary);
     }
 
     public void startSearchWindow() {
