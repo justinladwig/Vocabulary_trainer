@@ -4,14 +4,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-/**
- *
- * Beschreibung
- *
- * @version 1.0 vom 05.02.2020
- * @author 
- */
-
 public class AddWindow extends JFrame {
   // Anfang Attribute
   private JLabel lGermanword = new JLabel();

@@ -4,14 +4,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-/**
- *
- * Beschreibung
- *
- * @version 1.0 vom 20.01.2020
- * @author
- */
-
 public class StartWindow extends JFrame {
     // Anfang Attribute
     private JButton bLern = new JButton();
