@@ -45,7 +45,6 @@ public class StartWindow extends JFrame {
             }
         });
         // Anfang Komponenten
-
         bLern.setBounds(200, 50, 300, 75);
         bLern.setText("Learn");
         bLern.setMargin(new Insets(2, 2, 2, 2));

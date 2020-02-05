@@ -70,31 +70,29 @@ public class DeleteWindow extends JFrame {
   public void bDelete_ActionPerformed(ActionEvent evt) {
     if (jTextField.getText().trim().equals("")) {
       JOptionPane.showMessageDialog(null, "Failed to delete vocable!\n" + "Are all fields filled?", "Failed!", JOptionPane.ERROR_MESSAGE);
-    }
-    else {
-      if (jComboBox1.getSelectedItem().toString().equals("Englisch")) {
+    } else {
+      if (jComboBox1.getSelectedItem().toString().equals("English")) {
         if (mainFunctions.search(jTextField.getText().trim(), true) == null) {
           JOptionPane.showMessageDialog(null, "This vocable does not exist!", "Error", JOptionPane.INFORMATION_MESSAGE);
         } else {
           if (JOptionPane.showConfirmDialog(null, "Do you really want to delete the vocable?", "Delete vocable", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE) == 0) {
-            JOptionPane.showMessageDialog(null, "Vocable successful deleted!", "Deleted!", JOptionPane.INFORMATION_MESSAGE);
             mainFunctions.delete(jTextField.getText().trim(), true);
+            JOptionPane.showMessageDialog(null, "Vocable successful deleted!", "Deleted!", JOptionPane.INFORMATION_MESSAGE);
+            jTextField.setText("");
           }
         }
-      }
-      else{
-        if(mainFunctions.search(jTextField.getText(),false)==null){
+      } else {
+        if (mainFunctions.search(jTextField.getText(), false) == null) {
           JOptionPane.showMessageDialog(null, "This vocable does not exist!", "Error", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{
+        } else {
           if (JOptionPane.showConfirmDialog(null, "Do you really want to delete the vocable?", "Delete vocable", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE) == 0) {
+            mainFunctions.delete(jTextField.getText().trim(), false);
             JOptionPane.showMessageDialog(null, "Vocable successful deleted!", "Deleted!", JOptionPane.INFORMATION_MESSAGE);
-            mainFunctions.delete(jTextField.getText().trim(),false);
+            jTextField.setText("");
           }
         }
       }
     }
-
    } // end of bDelete_ActionPerformed
 
   // Ende Methoden
