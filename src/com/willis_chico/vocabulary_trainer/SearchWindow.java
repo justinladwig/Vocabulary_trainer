@@ -119,33 +119,33 @@ public class SearchWindow extends JFrame {
 
     public void button_ActionPerformed(ActionEvent evt) {
         Vocable vocable;
-        if (jComboBox1Model.getSelectedItem().equals("English to German")){
-            vocable = mainFunctions.search(jTextField1.getText().trim(), true);
-        }
-        else{
-            vocable = mainFunctions.search(jTextField1.getText().trim(), false);
-        }
-
-
-        if(vocable==null){
-            clearLabels();
-            JOptionPane.showMessageDialog(null, "This vocable does not exist!", "Error", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else {
-            if (jComboBox1Model.getSelectedItem().equals("English to German")) label3.setText(vocable.getWord());
-            else label3.setText(vocable.getTranslation());
-            rightV.setText(Integer.toString(vocable.getNumberRight()));
-            wrongV.setText(Integer.toString(vocable.getNumberWrong()));
-            switch (vocable.getDifficulty()){
-                case EASY:
-                    difficultyV.setText("easy");
-                    break;
-                case NORMAL:
-                    difficultyV.setText("normal");
-                    break;
-                case HARD:
-                    difficultyV.setText("hard");
-                    break;
+        if (jTextField1.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Failed to search vocable!\n" + "Are all fields filled?", "Failed!", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (jComboBox1Model.getSelectedItem().equals("English to German")) {
+                vocable = mainFunctions.search(jTextField1.getText().trim(), true);
+            } else {
+                vocable = mainFunctions.search(jTextField1.getText().trim(), false);
+            }
+            if (vocable == null) {
+                clearLabels();
+                JOptionPane.showMessageDialog(null, "This vocable does not exist!", "Error", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                if (jComboBox1Model.getSelectedItem().equals("English to German")) label3.setText(vocable.getWord());
+                else label3.setText(vocable.getTranslation());
+                rightV.setText(Integer.toString(vocable.getNumberRight()));
+                wrongV.setText(Integer.toString(vocable.getNumberWrong()));
+                switch (vocable.getDifficulty()) {
+                    case EASY:
+                        difficultyV.setText("easy");
+                        break;
+                    case NORMAL:
+                        difficultyV.setText("normal");
+                        break;
+                    case HARD:
+                        difficultyV.setText("hard");
+                        break;
+                }
             }
         }
     } // end of button_ActionPerformed
