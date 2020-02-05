@@ -20,6 +20,8 @@ public class AddWindow extends JFrame {
     private JTextField jTextField1 = new JTextField();
     private JTextField jTextField2 = new JTextField();
     private JButton bAdd = new JButton();
+    private JComboBox<String> jComboBox1 = new JComboBox<String>();
+    private DefaultComboBoxModel<String> jComboBox1Model = new DefaultComboBoxModel<String>();
     // Ende Attribute
 
     public AddWindow() {
@@ -53,7 +55,7 @@ public class AddWindow extends JFrame {
         cp.add(jTextField1);
         jTextField2.setBounds(350, 150, 150, 20);
         cp.add(jTextField2);
-        bAdd.setBounds(263, 225, 75, 50);
+        bAdd.setBounds(263, 250, 75, 50);
         bAdd.setText("add");
         bAdd.setMargin(new Insets(2, 2, 2, 2));
         bAdd.addActionListener(new ActionListener() {
@@ -63,6 +65,15 @@ public class AddWindow extends JFrame {
         });
         bAdd.setFont(new Font("Dialog", Font.BOLD, 20));
         cp.add(bAdd);
+        jComboBox1.setModel(jComboBox1Model);
+        jComboBox1.setBounds(255, 100, 90, 20);
+        jComboBox1.setFont(new Font("Dialog", Font.BOLD, 15));
+        jComboBox1Model.addElement("easy");
+        jComboBox1Model.addElement("medium");
+        jComboBox1Model.addElement("hard");
+        jComboBox1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jComboBox1.setSelectedIndex(1);
+        cp.add(jComboBox1);
         // Ende Komponenten
 
         setVisible(true);
