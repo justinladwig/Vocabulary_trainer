@@ -90,6 +90,10 @@ public class AddWindow extends JFrame {
 
     public void bAdd_ActionPerformed(ActionEvent evt) {
         String inputVocable = jTextField1.getText().trim();
+        if(mainFunctions.search(inputVocable,false)!=null){
+            JOptionPane.showMessageDialog(null, "This vocable does already exists!", "Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
         String inputTranslatedVocable = jTextField2.getText().trim();
         Difficulty selectedDifficulty;
         switch (jComboBox1.getSelectedIndex()) {
