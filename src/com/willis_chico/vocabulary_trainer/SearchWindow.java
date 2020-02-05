@@ -2,6 +2,8 @@ package com.willis_chico.vocabulary_trainer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.*;
 
 /**
@@ -47,6 +49,15 @@ public class SearchWindow extends JFrame {
         setResizable(false);
         Container cp = getContentPane();
         cp.setLayout(null);
+        addWindowListener(new WindowAdapter()
+        {
+            @Override
+            public void windowClosing(WindowEvent e)
+            {
+                e.getWindow().dispose();
+                mainFunctions.startStartWindow();
+            }
+        });
         // Anfang Komponenten
 
         label1.setBounds(100, 120, 150, 20);
