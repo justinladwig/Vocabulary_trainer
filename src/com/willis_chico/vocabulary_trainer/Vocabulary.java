@@ -86,6 +86,16 @@ public class Vocabulary {
             }
         }
     }
+    public void deleteVocableTranslation(String word) {
+        vocabulary.toFirst();
+        while (vocabulary.hasAccess()) {
+            if (vocabulary.getContent().getTranslation().equals(word)) {
+                vocabulary.remove();
+            } else {
+                vocabulary.next();
+            }
+        }
+    }
 
     // TODO: 18.01.2020 diese beiden Methode überprüfen
     //Vokabel suchen

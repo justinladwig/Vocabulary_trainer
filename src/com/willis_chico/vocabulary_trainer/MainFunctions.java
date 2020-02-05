@@ -45,6 +45,13 @@ public class MainFunctions {
             return vocabulary.searchVocable(word);
         }
     }
+    public void delete(String word, boolean translation) {
+        if (translation) {
+            vocabulary.deleteVocableTranslation(word);
+        } else {
+            vocabulary.deleteVocable(word);
+        }
+    }
 
     public void sort(String s) {
         switch (s) {

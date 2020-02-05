@@ -68,16 +68,35 @@ public class DeleteWindow extends JFrame {
   // Anfang Methoden
   
   public void bDelete_ActionPerformed(ActionEvent evt) {
-    if (!jTextField.getText().trim().equals("")) {
-      if (JOptionPane.showConfirmDialog(null, "Do you really want to delete the vocable?", "Delete vocable", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE) == 0) {
-        JOptionPane.showMessageDialog(null, "Vocable successful deleted!", "Deleted!", JOptionPane.INFORMATION_MESSAGE);
-        // TODO: 05.02.2020 Hier Vokabel löschen
-      }
-    } else {
+    if (jTextField.getText().trim().equals("")) {
       JOptionPane.showMessageDialog(null, "Failed to delete vocable!\n" + "Are all fields filled?", "Failed!", JOptionPane.ERROR_MESSAGE);
     }
+    else {
+      if(jComboBox1.getSelectedItem().toString().equals("English")){
+        if(mainFunctions.search(jTextField.getText().trim(),true)==null){
+          JOptionPane.showMessageDialog(null, "This vocable does not exist!", "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+          if (JOptionPane.showConfirmDialog(null, "Do you really want to delete the vocable?", "Delete vocable", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE) == 0) {
+            JOptionPane.showMessageDialog(null, "Vocable successful deleted!", "Deleted!", JOptionPane.INFORMATION_MESSAGE);
+            mainFunctions.delete(jTextField.getText().trim(),true);
+          }
+        }
+      }
+      else{
+        if(mainFunctions.search(jTextField.getText(),false)==null){
+          JOptionPane.showMessageDialog(null, "This vocable does not exist!", "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+          if (JOptionPane.showConfirmDialog(null, "Do you really want to delete the vocable?", "Delete vocable", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE) == 0) {
+            JOptionPane.showMessageDialog(null, "Vocable successful deleted!", "Deleted!", JOptionPane.INFORMATION_MESSAGE);
+            mainFunctions.delete(jTextField.getText().trim(),false);
+          }
+        }
+      }
+    }
 
-  } // end of bDelete_ActionPerformed
+   } // end of bDelete_ActionPerformed
 
   // Ende Methoden
 } // end of class DeleteWindow
