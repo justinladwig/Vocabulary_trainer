@@ -133,7 +133,8 @@ public class StartWindow extends JFrame {
     } // end of bAddVocable1_ActionPerformed
 
     public void bDeleteVocable_ActionPerformed(ActionEvent evt) {
-        // TODO hier Quelltext einfügen
+        mainFunctions.startDeleteWindow();
+        dispose();
 
     } // end of bDeleteVocable_ActionPerformed
 

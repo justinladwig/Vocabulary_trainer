@@ -25,6 +25,10 @@ public class MainFunctions {
         new AddWindow(this);
     }
 
+    public void startDeleteWindow() {
+        new DeleteWindow(this);
+    }
+
     public void exit() {
         vocabulary.exportVocabulary();
         System.out.println("LUL");
