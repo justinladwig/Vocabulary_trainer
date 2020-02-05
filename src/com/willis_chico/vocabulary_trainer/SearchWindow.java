@@ -120,10 +120,10 @@ public class SearchWindow extends JFrame {
     public void button_ActionPerformed(ActionEvent evt) {
         Vocable vocable;
         if (jComboBox1Model.getSelectedItem().equals("English to German")){
-            vocable=mainFunctions.search(jTextField1.getText(), true);
+            vocable = mainFunctions.search(jTextField1.getText().trim(), true);
         }
         else{
-            vocable=mainFunctions.search(jTextField1.getText(), false);
+            vocable = mainFunctions.search(jTextField1.getText().trim(), false);
         }
 
 
@@ -147,12 +147,7 @@ public class SearchWindow extends JFrame {
                     difficultyV.setText("hard");
                     break;
             }
-
         }
-
-
-
-
     } // end of button_ActionPerformed
 
     public void clearLabels(){
