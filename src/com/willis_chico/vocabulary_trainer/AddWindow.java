@@ -97,7 +97,25 @@ public class AddWindow extends JFrame {
   
   public void bAdd_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
-    
+    Difficulty selectedDifficulty;
+    switch (jComboBox1.getSelectedIndex()) {
+      case 0:
+        selectedDifficulty = Difficulty.EASY;
+        System.out.println("easy");
+        break;
+      case 1:
+        selectedDifficulty = Difficulty.NORMAL;
+        System.out.println("normal");
+        break;
+      case 2:
+        selectedDifficulty = Difficulty.HARD;
+        System.out.println("hard");
+        break;
+      default:
+        selectedDifficulty = Difficulty.NORMAL;
+        System.out.println("default");
+    }
+    mainFunctions.addVocable(jTextField1.getText(), jTextField2.getText(), selectedDifficulty, 0, 0);
   } // end of bAdd_ActionPerformed
 
   // Ende Methoden
