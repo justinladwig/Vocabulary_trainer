@@ -4,13 +4,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-/**
- * Beschreibung
- *
- * @author
- * @version 1.0 vom 22.01.2020
- */
-
 public class LearnWindow extends JFrame {
   // Anfang Attribute
   private JLabel jLabel1 = new JLabel();

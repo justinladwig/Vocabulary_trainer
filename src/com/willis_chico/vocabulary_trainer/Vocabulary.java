@@ -17,7 +17,6 @@ public class Vocabulary {
         List<String[]> values = editor.getValues();
         Difficulty difficulty;
         values.toFirst();
-        // TODO: 19.01.2020 Auf fehlerhafte CSV überprüfen
         while (values.hasAccess()) {
             try {
                 switch (Integer.parseInt(values.getContent()[2])) {
@@ -97,7 +96,6 @@ public class Vocabulary {
         }
     }
 
-    // TODO: 18.01.2020 diese beiden Methode überprüfen
     //Vokabel suchen
     public Vocable searchVocable(String word) {
         vocabulary.toFirst();

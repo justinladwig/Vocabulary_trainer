@@ -113,11 +113,9 @@ public class StartWindow extends JFrame {
     // Anfang Methoden
 
     public void bLearn_ActionPerformed(ActionEvent evt) {
-        System.out.println(jComboBox1.getSelectedItem());
         mainFunctions.sort(jComboBox1.getSelectedItem().toString());
         mainFunctions.startLearnWindow();
         dispose();
-        // TODO: 05.02.2020 jComboBox1 sollte beim starten des Programms wieder richtig ausgewählt sein
     } // end of bLearn_ActionPerformed
 
     public void bSearch_ActionPerformed(ActionEvent evt) {
