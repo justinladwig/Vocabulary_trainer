@@ -31,7 +31,6 @@ public class MainFunctions {
 
     public void exit() {
         vocabulary.exportVocabulary();
-        System.out.println("LUL");
     }
 
     public void addVocable(String word, String translation, Difficulty difficulty, int numberWrong, int numberRight) {
