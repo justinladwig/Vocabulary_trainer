@@ -109,7 +109,7 @@ public class AddWindow extends JFrame {
                 selectedDifficulty = Difficulty.NORMAL;
                 System.out.println("default");
         }
-        if (!inputVocable.equals("") || !inputTranslatedVocable.equals("")) {
+        if (!inputVocable.equals("") && !inputTranslatedVocable.equals("")) {
             mainFunctions.addVocable(inputVocable, inputTranslatedVocable, selectedDifficulty, 0, 0);
             JOptionPane.showMessageDialog(null, "Successfully added vocable!", "Success!", JOptionPane.INFORMATION_MESSAGE);
         } else {
