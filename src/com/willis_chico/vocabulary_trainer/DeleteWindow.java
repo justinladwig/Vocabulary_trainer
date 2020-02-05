@@ -68,8 +68,15 @@ public class DeleteWindow extends JFrame {
   // Anfang Methoden
   
   public void bDelete_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einfügen
-    JOptionPane.showConfirmDialog(null, "Do you really want to delete the vocable?", "Delete vocable", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+    if (!jTextField.getText().trim().equals("")) {
+      if (JOptionPane.showConfirmDialog(null, "Do you really want to delete the vocable?", "Delete vocable", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE) == 0) {
+        JOptionPane.showMessageDialog(null, "Vocable successful deleted!", "Deleted!", JOptionPane.INFORMATION_MESSAGE);
+        // TODO: 05.02.2020 Hier Vokabel löschen
+      }
+    } else {
+      JOptionPane.showMessageDialog(null, "Failed to delete vocable!\n" + "Are all fields filled?", "Failed!", JOptionPane.ERROR_MESSAGE);
+    }
+
   } // end of bDelete_ActionPerformed
 
   // Ende Methoden
