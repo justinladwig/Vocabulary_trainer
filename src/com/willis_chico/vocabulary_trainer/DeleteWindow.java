@@ -5,14 +5,6 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-/**
- *
- * Beschreibung
- *
- * @version 1.0 vom 05.02.2020
- * @author 
- */
-
 public class DeleteWindow extends JFrame {
   // Anfang Attribute
   private JComboBox<String> jComboBox1 = new JComboBox<String>();
@@ -77,9 +69,8 @@ public class DeleteWindow extends JFrame {
   
   public void bDelete_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
-    
+    JOptionPane.showConfirmDialog(null, "Do you really want to delete the vocable?", "Delete vocable", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
   } // end of bDelete_ActionPerformed
 
   // Ende Methoden
 } // end of class DeleteWindow
-
