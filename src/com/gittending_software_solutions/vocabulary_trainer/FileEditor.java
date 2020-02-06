@@ -1,4 +1,4 @@
-package com.willis_chico.vocabulary_trainer;
+package com.gittending_software_solutions.vocabulary_trainer;
 
 import java.io.*;
 import java.util.Scanner;

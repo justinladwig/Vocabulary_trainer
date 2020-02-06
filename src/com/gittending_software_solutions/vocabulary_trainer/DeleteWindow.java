@@ -1,9 +1,8 @@
-package com.willis_chico.vocabulary_trainer;
+package com.gittending_software_solutions.vocabulary_trainer;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
 public class DeleteWindow extends JFrame {
   // Anfang Attribute

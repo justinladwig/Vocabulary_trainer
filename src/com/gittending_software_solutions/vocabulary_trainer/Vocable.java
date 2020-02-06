@@ -1,4 +1,4 @@
-package com.willis_chico.vocabulary_trainer;
+package com.gittending_software_solutions.vocabulary_trainer;
 
 public class Vocable {
     private String word;
