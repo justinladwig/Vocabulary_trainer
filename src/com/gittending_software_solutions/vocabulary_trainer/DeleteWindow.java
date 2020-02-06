@@ -1,25 +1,30 @@
 package com.gittending_software_solutions.vocabulary_trainer;
 
+import com.gittending_software_solutions.vocabulary_trainer.MainFunctions;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
 public class DeleteWindow extends JFrame {
   // Anfang Attribute
+  private JButton bDelete = new JButton();
+  private ImageIcon bDeleteIcon = new ImageIcon("res/trashcan.png");
+  private JTextField jTextField = new JTextField();
   private JComboBox<String> jComboBox1 = new JComboBox<String>();
   private DefaultComboBoxModel<String> jComboBox1Model = new DefaultComboBoxModel<String>();
-  private JButton bDelete = new JButton();
-  private JTextField jTextField = new JTextField();
+  private JLabel lDeletevocable = new JLabel();
+  private JLabel lEntervocable = new JLabel();
 
   private MainFunctions mainFunctions;
   // Ende Attribute
-  
+
   public DeleteWindow(MainFunctions mainFunctions) {
     // Frame-Initialisierung
     super();
     this.mainFunctions = mainFunctions;
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 700; 
+    int frameWidth = 700;
     int frameHeight = 540;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
@@ -38,34 +43,42 @@ public class DeleteWindow extends JFrame {
       }
     });
     // Anfang Komponenten
-    
-    jComboBox1.setModel(jComboBox1Model);
-    jComboBox1.setBounds(275, 92, 150, 20);
-    jComboBox1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-    jComboBox1Model.addElement("German");
-    jComboBox1Model.addElement("English");
-    cp.add(jComboBox1);
-    bDelete.setBounds(300, 309, 100, 75);
-    bDelete.setText("delete");
+
+    bDelete.setBounds(300, 263, 100, 50);
+    bDelete.setText("Delete");
     bDelete.setMargin(new Insets(2, 2, 2, 2));
-    bDelete.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
+    bDelete.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent evt) {
         bDelete_ActionPerformed(evt);
       }
     });
     bDelete.setBackground(Color.RED);
-    bDelete.setFont(new Font("Dialog", Font.BOLD, 20));
     bDelete.setForeground(Color.WHITE);
+    bDelete.setBorder(BorderFactory.createEtchedBorder(0, Color.WHITE, new Color(0xC0C0C0)));
+    bDelete.setIcon(bDeleteIcon);
     cp.add(bDelete);
-    jTextField.setBounds(275, 201, 150, 20);
+    jTextField.setBounds(323, 187, 150, 20);
     cp.add(jTextField);
+    jComboBox1.setModel(jComboBox1Model);
+    jComboBox1.setBounds(275, 110, 150, 20);
+    jComboBox1Model.addElement("German");
+    jComboBox1Model.addElement("English");
+    cp.add(jComboBox1);
+    lDeletevocable.setBounds(279, 34, 142, 28);
+    lDeletevocable.setText("Delete vocable");
+    lDeletevocable.setFont(new Font("Dialog", Font.BOLD, 20));
+    lDeletevocable.setHorizontalAlignment(SwingConstants.CENTER);
+    cp.add(lDeletevocable);
+    lEntervocable.setBounds(215, 187, 100, 20);
+    lEntervocable.setText("Enter vocable:");
+    cp.add(lEntervocable);
     // Ende Komponenten
-    
+
     setVisible(true);
   } // end of public DeleteWindow
   
   // Anfang Methoden
-  
+
   public void bDelete_ActionPerformed(ActionEvent evt) {
     if (jTextField.getText().trim().equals("")) {
       JOptionPane.showMessageDialog(null, "Failed to delete vocable!\n" + "Are all fields filled?", "Failed!", JOptionPane.ERROR_MESSAGE);
@@ -92,7 +105,8 @@ public class DeleteWindow extends JFrame {
         }
       }
     }
-   } // end of bDelete_ActionPerformed
+  } // end of bDelete_ActionPerformed
 
   // Ende Methoden
 } // end of class DeleteWindow
+
