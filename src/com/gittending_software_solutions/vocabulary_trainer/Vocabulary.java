@@ -56,6 +56,7 @@ public class Vocabulary {
         editor.write();
     }
 
+    // Vokabeln in der Konsole ausgeben (nur zu Debug zwecken)
     public void printVocabulary() {
         vocabulary.toFirst();
         while (vocabulary.hasAccess()) {
@@ -74,7 +75,7 @@ public class Vocabulary {
         vocabulary.append(vocable);
     }
 
-    //Vokabel löschen
+    // Vokabel in Deutsch suchen und löschen
     public void deleteVocable(String word) {
         vocabulary.toFirst();
         while (vocabulary.hasAccess()) {
@@ -86,6 +87,7 @@ public class Vocabulary {
         }
     }
 
+    //  Vokabel in Englisch suchen un löschen
     public void deleteVocableTranslation(String word) {
         vocabulary.toFirst();
         while (vocabulary.hasAccess()) {
@@ -97,7 +99,7 @@ public class Vocabulary {
         }
     }
 
-    //Vokabel suchen
+    // Vokabel in Englisch suchen
     public Vocable searchVocable(String word) {
         vocabulary.toFirst();
         while (vocabulary.hasAccess()) {
@@ -109,6 +111,7 @@ public class Vocabulary {
         return null;
     }
 
+    // Vokabel in Deutsch suchen
     public Vocable searchVocableTranslation(String word) {
         vocabulary.toFirst();
         while (vocabulary.hasAccess()) {
@@ -132,7 +135,7 @@ public class Vocabulary {
     }
 
 
-    //Alphabetisch sortieren(a;A;...z;Z)
+    // Alphabetisch sortieren(a;A;...z;Z)
     public void sortVocabularyAlphabetic() {
         List<Vocable> temp = new List<>();
         vocabulary.toFirst();
@@ -163,7 +166,7 @@ public class Vocabulary {
         }
     }
 
-    //nach Fehlern sortieren(5;....;0)
+    // nach Fehlern sortieren(5;....;0)
     public void sortVocabularyNumberWrong() {
         List<Vocable> temp = new List<>();
         vocabulary.toFirst();
@@ -194,7 +197,7 @@ public class Vocabulary {
         }
     }
 
-    //nach schwierigkeit sortieren(HARD;...;EASY)
+    // nach schwierigkeit sortieren(HARD;...;EASY)
     public void sortVocabularyDifficulty() {
         List<Vocable> temp = new List<>();
         vocabulary.toFirst();
@@ -225,7 +228,7 @@ public class Vocabulary {
         }
     }
 
-    //zufällig sortieren
+    // zufällig sortieren
     public void sortVocabularyRandom() {
         List<Vocable> temp = new List<>();
         int length = 0;
@@ -248,14 +251,17 @@ public class Vocabulary {
         }
     }
 
+    // Liste der Vokabeln geben
     public List<Vocable> getVocabulary() {
         return vocabulary;
     }
 
+    // Anzahl der fehlerhaften eingaben um 1 erhöhen.
     public void addWrong() {
         vocabulary.getContent().setNumberWrong(vocabulary.getContent().getNumberWrong() + 1);
     }
 
+    // Anzahl der richtigen Eingaben um 1 erhöhen
     public void addRight() {
         vocabulary.getContent().setNumberRight(vocabulary.getContent().getNumberRight() + 1);
     }

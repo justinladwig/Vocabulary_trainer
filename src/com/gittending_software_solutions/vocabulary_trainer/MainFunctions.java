@@ -29,6 +29,7 @@ public class MainFunctions {
         new DeleteWindow(this);
     }
 
+    // Methodenaufruf um Vokabel in Datei zu speichern
     public void exit() {
         vocabulary.exportVocabulary();
     }
@@ -37,6 +38,7 @@ public class MainFunctions {
         vocabulary.addVocable(new Vocable(word, translation, difficulty, numberWrong, numberRight));
     }
 
+    //Nach Vokabel suchen: false für Deutsch und true für Englisch
     public Vocable search(String word, boolean translation) {
         if (translation) {
             return vocabulary.searchVocableTranslation(word);
@@ -52,6 +54,7 @@ public class MainFunctions {
         }
     }
 
+    // Liste nach Art sortieren
     public void sort(String s) {
         switch (s) {
             case "random":
