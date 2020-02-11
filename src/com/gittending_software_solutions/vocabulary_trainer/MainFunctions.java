@@ -32,6 +32,7 @@ public class MainFunctions {
     // Methodenaufruf um Vokabel in Datei zu speichern
     public void exit() {
         vocabulary.exportVocabulary();
+        System.exit(0);
     }
 
     public void addVocable(String word, String translation, Difficulty difficulty, int numberWrong, int numberRight) {
